@@ -170,16 +170,6 @@
     const calculate = (a,b) => {
         return levenshteinDistance(a.toLowerCase(),b.toLowerCase()) < 3;
     }
-
-    const getVille = (name)=>{
-        let result;
-        villes.forEach(ville=> {
-            if(ville._name === name){
-                result = ville
-            }
-        });
-        return result;
-    }
     const getPnj = (id)=>{
         let result;
         pnjs.forEach(pnj=>{
@@ -189,6 +179,12 @@
         });
         return result;
     }
+    const createDeco = (name, pnj_id, images, price, event, craftable, tags)=>{
+        id_deco += 1;
+        return new Deco(id_deco, name, pnj_id, images, price, event, craftable, tags);
+    }
+
+
     const searchInVille = (recherche) =>{
         let result = [];
         villes.forEach(ville=> {
@@ -207,15 +203,7 @@
         });
         return result;
     };
-    const getDecoInVille = (ville)=>{
-        let result = [];
-        decos.forEach(deco=>{
-            if(deco.pnj_id.ville_id === ville){
-                result.push(deco);
-            }
-        });
-        return result;
-    }
+
     const getPnjByName = (name) =>{
         let result = [];
         pnjs.forEach(pnj => {
@@ -247,7 +235,7 @@
         });
 
         searchInVille(recherche).forEach(ville=>{
-            getDecoInVille(ville).forEach(deco => {
+            getDecoInVille(ville,decos).forEach(deco => {
                 if(!result.includes(deco)){
                     result.push(deco);
                 }
@@ -266,16 +254,11 @@
         return result;
     }
 
-    let id_deco = 0;
-    const createDeco = (name, pnj_id, images, price, event, craftable, tags)=>{
-        id_deco += 1;
-        return new Deco(id_deco, name, pnj_id, images, price, event, craftable, tags);
-    }
-
     let villes = [];
     let pnjs =[];
     let decos = [];
 
+    let id_deco = 0;
     /**
      * data ville
      */
@@ -317,7 +300,15 @@
     /**
      * data ville
      */
-
+    const getVille = (name)=>{
+        let result;
+        villes.forEach(ville=> {
+            if(ville._name === name){
+                result = ville
+            }
+        });
+        return result;
+    }
     /**
      * données pnj
      */
@@ -337,12 +328,13 @@
      * données pnj
      */
 
+
     /**
      * données decos
      */
     decos.push(createDeco("Pousse de Bambou", getPnj(1),["https://cdn.discordapp.com/attachments/1251252569691656204/1251252628776685758/image.png?ex=666de751&is=666c95d1&hm=263d50b78682c14dc35f05a5d5f0bc6394c50f6a706ce2b28e291bd9d6ec007b&"],"5 blocs d'émeraude","","oui",["bambou","plante"]));
     decos.push(createDeco("Tronc De Bambou", getPnj(1),["https://cdn.discordapp.com/attachments/1251252569691656204/1251264505233674311/image.png?ex=666df261&is=666ca0e1&hm=9c7f98ca924f183827bf30f14d62890e3599fcad2169365482025a2093fdb1bc&"],"5 blocs d'émeraude","","oui",["bambou","plante"]));
-    decos.push(createDeco("Citrouille Japonaise", getPnj(1),["https://cdn.discordapp.com/attachments/1251252569691656204/1251286810013864136/image.png?ex=666e0727&is=666cb5a7&hm=ac2062b400f331660fb13874d7596f4fafde57fc45390d868418f7351776b036&"],"5 blocs d'émeraude","","oui",["plante","citrouille"]));
+    decos.push(createDeco("Citrouille Japonaise", getPnj(1),["https://cdn.discordapp.com/attachments/1251252569691656204/1251286810013864136/image.png?ex=66734d27&is=6671fba7&hm=7375515100ac1d1eafbe0126fa691ff9314df8a1289b152959ba243a246c22a6&"],"5 blocs d'émeraude","","oui",["plante","citrouille"]));
     decos.push(createDeco("Durian", getPnj(1),["https://cdn.discordapp.com/attachments/1251252569691656204/1251287213426081803/image.png?ex=666e0787&is=666cb607&hm=1f3d5662307354e06dc2798572dfa1eeaeb29d51cb6844bb0957aa2fae96ac44&"],"5 blocs d'émeraude","","oui",["plante"]));
     decos.push(createDeco("Plan de construction", getPnj(2),["https://cdn.discordapp.com/attachments/1251252569691656204/1251289803413000304/image.png?ex=666e09f0&is=666cb870&hm=a807f5cf4770f301eec29b1fd314aa899fb2d070741fdbd57d8872801042245f&"],"5 blocs d'émeraude","","oui",["maison","plan"]));
     decos.push(createDeco("Bonsaï cerisier à fleurs", getPnj(3),["https://cdn.discordapp.com/attachments/1251252569691656204/1251533472330154014/image.png?ex=666eece0&is=666d9b60&hm=4aeeaa259fed117a8a26199117450864b5495b44cc79eb3ede07aabeeb0a7a30&"],"vase + 64 poudres d'os","","oui",["plante","arbre","cerisier","bonsaï"]));
@@ -410,6 +402,18 @@
     /**
      * données decos
      */
+
+    const getDecoInVille = (ville, decos)=>{
+        let result = [];
+        decos.forEach(deco=>{
+            console.log(deco)
+            if(deco._pnj_id._ville_id._name === ville){
+                result.push(deco);
+            }
+        });
+        return result;
+    }
+
 </script>
 
 
@@ -441,6 +445,8 @@
                             <section class="row py-3 "  id="deco_list">
 
 
+
+
                             </section>
                         </div>
 
@@ -456,23 +462,68 @@
     const params = new URLSearchParams(window.location.search);
     let recherche = params.get("recherche");
     const result = recherche === undefined || recherche === null || recherche === "" ? decos :  searchDeco(recherche);
-    //console.log(result.length === 0 ? "Pas de résultat" : result);
+    //console.log(result.length === 0 ? "Pas de résultat" : result);x
 
+    const createDecoRender = (deco) =>{
+        let divMD4 = document.createElement('div');
+        divMD4.className = "col-md-4";
+
+        let divPB2 = document.createElement('div');
+        divPB2.className = "mb-3 pb-2";
+
+        let divDate = document.createElement('div');
+        divDate.className = "date-wrapper";
+
+        let divPost = document.createElement('div')
+        divPost.className = "post"
+        divPost.style = "background-image:url('" + deco.images[0] +"');"
+
+        let divContent = document.createElement('div');
+        divContent.className = "content";
+
+        let h5 = document.createElement('h5');
+        h5.className = "title mt-2";
+        h5.innerHTML = deco.name;
+
+        let pmb1 = document.createElement('p');
+        pmb1.className = "description mb-1";
+        pmb1.innerHTML = "Pnj: " + deco._pnj_id._name + " / Ville : " + deco.pnj_id.ville_id.name + " <br> position : " + deco.pnj_id.position
+
+        let divAction = document.createElement('div');
+        divAction.className = "action";
+
+        let spanValue = document.createElement('span');
+        spanValue.className = "value";
+        spanValue.innerHTML = "prix"
+
+        let h6Date = document.createElement('h6');
+        h6Date.className = "date";
+
+        let spanValueCraft = document.createElement('span');
+        spanValueCraft.className = "value";
+        spanValueCraft.innerHTML = "prix"
+
+        h6Date.appendChild(spanValueCraft);
+        divContent.appendChild(h5);
+        divContent.appendChild(pmb1);
+
+        divAction.appendChild(spanValue);
+        divContent.appendChild(divAction);
+
+        divPost.appendChild(divContent);
+        divDate.appendChild(divPost);
+        divDate.appendChild(h6Date);
+        divPB2.appendChild(divDate);
+        divMD4.appendChild(divPB2);
+        return divMD4;
+    }
     let listDecos = document.getElementById("deco_list");
-    let divMD4 = document.createElement('div');
-    divMD4.className = "col-md-4";
+    console.log(result)
+    result.forEach(deco =>{
+        listDecos.appendChild(createDecoRender(deco));
 
-    let divPB2 = document.createElement('div');
-    divPB2.className = "mb-3 pb-2";
+    });
 
-    let divDate = document.createElement('div');
-    divDate.className = "date-wrapper";
-
-    let divPost = document.createElement('div')
-    divPost.className = "post"
-    divPost.style = "background-image:url('" + "');"
-
-    //document.write(result.length === 0 ? "Pas de résultat" : result)
 </script>
 
 </body>
