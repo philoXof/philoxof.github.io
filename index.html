@@ -93,8 +93,8 @@
         get pnj_id() {
             return this._pnj_id;
         }
-        get images() {
-            return this._images;
+        get image() {
+            return this._image;
         }
         get price() {
             return this._price;
@@ -102,10 +102,10 @@
         get id() {
             return this._id;
         }
-        constructor(id, name, pnj_id, images, price, event, craftable, tags) {
+        constructor(id, name, pnj_id, image, price, event, craftable, tags) {
             this._name = name;
             this._pnj_id = pnj_id;
-            this._images = images;
+            this._image = image;
             this._price = price;
             this._id = id;
             this._events = event;
@@ -177,9 +177,9 @@
         });
         return result;
     }
-    const createDeco = (name, pnj_id, images, price, event, craftable, tags)=>{
+    const createDeco = (name, pnj_id, price, event, craftable, tags)=>{
         id_deco += 1;
-        return new Deco(id_deco, name, pnj_id, images, price, event, craftable, tags);
+        return new Deco(id_deco, name, pnj_id, "img/" + name + ".png" , price, event, craftable, tags);
     }
 
 
@@ -330,73 +330,73 @@
     /**
      * données decos
      */
-    decos.push(createDeco("Pousse de Bambou", getPnj(1),["img/PousseDeBambou.png"],"5 blocs d'émeraude","","oui",["bambou","plante"]));
-    decos.push(createDeco("Tronc De Bambou", getPnj(1),["https://cdn.discordapp.com/attachments/1251252569691656204/1251264505233674311/image.png?ex=666df261&is=666ca0e1&hm=9c7f98ca924f183827bf30f14d62890e3599fcad2169365482025a2093fdb1bc&"],"5 blocs d'émeraude","","oui",["bambou","plante"]));
-    decos.push(createDeco("Citrouille Japonaise", getPnj(1),["https://cdn.discordapp.com/attachments/1251252569691656204/1251286810013864136/image.png?ex=66734d27&is=6671fba7&hm=7375515100ac1d1eafbe0126fa691ff9314df8a1289b152959ba243a246c22a6&"],"5 blocs d'émeraude","","oui",["plante","citrouille"]));
-    decos.push(createDeco("Durian", getPnj(1),["https://cdn.discordapp.com/attachments/1251252569691656204/1251287213426081803/image.png?ex=666e0787&is=666cb607&hm=1f3d5662307354e06dc2798572dfa1eeaeb29d51cb6844bb0957aa2fae96ac44&"],"5 blocs d'émeraude","","oui",["plante"]));
-    decos.push(createDeco("Plan de construction", getPnj(2),["https://cdn.discordapp.com/attachments/1251252569691656204/1251289803413000304/image.png?ex=666e09f0&is=666cb870&hm=a807f5cf4770f301eec29b1fd314aa899fb2d070741fdbd57d8872801042245f&"],"5 blocs d'émeraude","","oui",["maison","plan"]));
-    decos.push(createDeco("Bonsaï cerisier à fleurs", getPnj(3),["https://cdn.discordapp.com/attachments/1251252569691656204/1251533472330154014/image.png?ex=666eece0&is=666d9b60&hm=4aeeaa259fed117a8a26199117450864b5495b44cc79eb3ede07aabeeb0a7a30&"],"vase + 64 poudres d'os","","oui",["plante","arbre","cerisier","bonsaï"]));
-    decos.push(createDeco("Bonsaï ancien", getPnj(3),["https://cdn.discordapp.com/attachments/1251252569691656204/1251535500251107479/image.png?ex=666eeec3&is=666d9d43&hm=26b490822136af2f52fb4d12a0b63cef7037ec5628bd7a832f3b4af2fd28e611&"],"vase + 64 poudres d'os","","oui",["plante","arbre","bonsaï"]));
-    decos.push(createDeco("Sabot de vénus en pot", getPnj(3),["https://cdn.discordapp.com/attachments/1251252569691656204/1251537581645234196/image.png?ex=666ef0b3&is=666d9f33&hm=a09fbcb3fdb58f1029ac00f34c72d451cdf6fd61cc8f17382cf77ce787d1ac0b&"],"vase + 64 poudres d'os","","oui",["plante"]));
-    decos.push(createDeco("Bambous en pot", getPnj(3),["https://cdn.discordapp.com/attachments/1251252569691656204/1251537581645234196/image.png?ex=666ef0b3&is=666d9f33&hm=a09fbcb3fdb58f1029ac00f34c72d451cdf6fd61cc8f17382cf77ce787d1ac0b&"],"vase + 64 poudres d'os","","oui",["plante","bambou"]));
+    decos.push(createDeco("Pousse de Bambou", getPnj(1),"5 blocs d'émeraude","","oui",["bambou","plante"]));
+    decos.push(createDeco("Tronc De Bambou", getPnj(1),"5 blocs d'émeraude","","oui",["bambou","plante"]));
+    decos.push(createDeco("Citrouille Japonaise", getPnj(1),"5 blocs d'émeraude","","oui",["plante","citrouille"]));
+    decos.push(createDeco("Durian", getPnj(1),"5 blocs d'émeraude","","oui",["plante"]));
+    decos.push(createDeco("Plan de construction", getPnj(2),"5 blocs d'émeraude","","oui",["maison","plan"]));
+    decos.push(createDeco("Bonsaï cerisier à fleurs", getPnj(3),"vase + 64 poudres d'os","","oui",["plante","arbre","cerisier","bonsaï"]));
+    decos.push(createDeco("Bonsaï ancien", getPnj(3),"vase + 64 poudres d'os","","oui",["plante","arbre","bonsaï"]));
+    decos.push(createDeco("Sabot de vénus en pot", getPnj(3),"vase + 64 poudres d'os","","oui",["plante"]));
+    decos.push(createDeco("Bambous en pot", getPnj(3),"vase + 64 poudres d'os","","oui",["plante","bambou"]));
     decos.push(createDeco("Roseaux en pot", getPnj(3),["https://cdn.discordapp.com/attachments/1251252569691656204/1251547440574894192/image.png?ex=666ef9e2&is=666da862&hm=7755c89b1dd3618ef7080d73a620609f8a9c9ccc5751de82f2b7175631d3c9af&"],"vase + 64 poudres d'os","","oui",["plante"]));
-    decos.push(createDeco("Lilas en pot", getPnj(3),["https://cdn.discordapp.com/attachments/1251252569691656204/1251548236519571598/image.png?ex=666efaa0&is=666da920&hm=2416ec550ae9e24bc27d41e8f4e13d0038f276dba1a4107b3a024770aa664dd0&"],"vase + 64 poudres d'os","","oui",["plante","fleur"]));
-    decos.push(createDeco("Schlumbergera en pot", getPnj(3),["https://cdn.discordapp.com/attachments/1251252569691656204/1251550093614514177/image.png?ex=666efc5a&is=666daada&hm=a7c4048cc73be77c98e457033ca88630aa81d7299477aa04ba401f2fe5918752&"],"vase + 64 poudres d'os","","oui",["plante","fleur"]));
-    decos.push(createDeco("Cactus en pot", getPnj(3),["https://cdn.discordapp.com/attachments/1251252569691656204/1251555471878258789/image.png?ex=666f015d&is=666dafdd&hm=d051dc14e980fc7d5b64b36c9728754a336bae481062fc6588eeb3e72dd17ca2&"],"vase + 64 poudres d'os","","oui",["plante","cactus"]));
-    decos.push(createDeco("vase", getPnj(5),["https://cdn.discordapp.com/attachments/1251252569691656204/1251587583201513482/image.png?ex=666f1f45&is=666dcdc5&hm=9c5042d518447b2f0208b219fb789d8330510173158800cd4e5facdd7498624a&"],"5 blocs d'émeraude","","oui",["noir"]));
-    decos.push(createDeco("vase", getPnj(5),["https://cdn.discordapp.com/attachments/1251252569691656204/1251587804157317131/image.png?ex=666f1f79&is=666dcdf9&hm=e11e27f6b040c95e59436098284bfa5b587fa730b59179fd96c773f3f1f534b7&"],"5 blocs d'émeraude","","oui",["orange"]));
-    decos.push(createDeco("vase", getPnj(5),["https://cdn.discordapp.com/attachments/1251252569691656204/1251588234664870011/image.png?ex=666f1fe0&is=666dce60&hm=43debbfc8b9319ba7ffba22241b1326ed38309672172426634472f1d1f992dc1&"],"5 blocs d'émeraude","","oui",["marron"]));
-    decos.push(createDeco("vase", getPnj(5),["https://cdn.discordapp.com/attachments/1251252569691656204/1251588892382068848/image.png?ex=666f207d&is=666dcefd&hm=d5bf03e7fa349ce88cc348c0d8e36ca165658f192d36b352a98a1d6c53d2b0a3&"],"5 blocs d'émeraude","","oui",["jaune"]));
-    decos.push(createDeco("vase", getPnj(5),["https://cdn.discordapp.com/attachments/1251252569691656204/1251589007570108426/image.png?ex=666f2098&is=666dcf18&hm=637a2f0502090417f03860035359376fd73841205b10152abb2d176c5028b7b7&"],"5 blocs d'émeraude","","oui",["violet"]));
-    decos.push(createDeco("vase", getPnj(5),["https://cdn.discordapp.com/attachments/1251252569691656204/1251589179272462427/image.png?ex=666f20c1&is=666dcf41&hm=58081142aaa61ccf2f756e439fda20d61a7ff96fe7666bb50fabf1e98234fb4f&"],"5 blocs d'émeraude","","oui",["blanc"]));
-    decos.push(createDeco("vase", getPnj(5),["https://cdn.discordapp.com/attachments/1251252569691656204/1251589276278325388/image.png?ex=666f20d8&is=666dcf58&hm=d829f270ef59541d1a52ecd9bbba1c82e4ad9844cdf7dd56486630a9b9af5837&"],"5 blocs d'émeraude","","oui",["bleu"]));
-    decos.push(createDeco("vase", getPnj(5),["https://cdn.discordapp.com/attachments/1251252569691656204/1251589395752947822/image.png?ex=666f20f5&is=666dcf75&hm=d5d5441ee054f49577aa0aff4f6f3415cc48c04effdc65c0edcfa4da7eb1f7c7&"],"5 blocs d'émeraude","","oui",["vert"]));
-    decos.push(createDeco("Farine", getPnj(6),["https://cdn.discordapp.com/attachments/1251252569691656204/1251594375893614683/image.png?ex=666f2598&is=666dd418&hm=59821c6e3b2a90bc0bbb2e5e7029347405a9904f07c507c8a22dd9ec594a28bc&"],"5 blocs d'émeraude","","oui",["ingredient"]));
-    decos.push(createDeco("Pain", getPnj(6),["https://cdn.discordapp.com/attachments/1251252569691656204/1251597430353563811/image.png?ex=666f2870&is=666dd6f0&hm=88921c075831618672d69144016d2f67fe07d13f840d9d039131cc7ae853607c&"],"5 blocs d'émeraude","","oui",["pain"]));
-    decos.push(createDeco("Pain moisi", getPnj(6),["https://cdn.discordapp.com/attachments/1251252569691656204/1251598003689488456/image.png?ex=666f28f9&is=666dd779&hm=142ee1c42b88810e88b6c662ffa44f25dbf7b9150ddc1b68378161589b9b4bb2&"],"5 blocs d'émeraude","","oui",["pain"]));
-    decos.push(createDeco("Pain de seigle", getPnj(6),["https://cdn.discordapp.com/attachments/1251252569691656204/1251598561204899931/image.png?ex=666f297e&is=666dd7fe&hm=c10c420c02a94849bf23b3de7fcdd7608800ff172a9ac4e4c0b112ad53d37972&"],"5 blocs d'émeraude","","oui",["pain"]));
-    decos.push(createDeco("Pain de romarin", getPnj(6),["https://cdn.discordapp.com/attachments/1251252569691656204/1251598719158321152/image.png?ex=666f29a4&is=666dd824&hm=364b2541e7766d67020e4eb1f26684d9ad89131125e3a65272fd127c1fee1966&"],"5 blocs d'émeraude","","oui",["pain"]));
-    decos.push(createDeco("Pain aux noix de raisin", getPnj(6),["https://cdn.discordapp.com/attachments/1251252569691656204/1251613899501863053/image.png?ex=666f37c7&is=666de647&hm=7e9827eec83edacf88ca826d8654fc61be2b9aded5287f9d63aec57be4afe2ce&"],"5 blocs d'émeraude","","oui",["pain"]));
-    decos.push(createDeco("Pain au levain", getPnj(6),["https://cdn.discordapp.com/attachments/1251252569691656204/1251614091605311588/image.png?ex=666f37f5&is=666de675&hm=244e49de56b4df4fc3637cabd7d25b02ed8b0b9eacccd2899da7af5ccd7e93f2&"],"5 blocs d'émeraude","","oui",["pain"]));
-    decos.push(createDeco("vase", getPnj(7),["https://cdn.discordapp.com/attachments/1251252569691656204/1251636421786079363/image.png?ex=666f4cc1&is=666dfb41&hm=53a659df6c12abfe1c03c25e0fc931ee3034485490ca324638f39e63b73e1892&"],"5 blocs d'émeraude","","oui",["rose"]));
-    decos.push(createDeco("vase", getPnj(7),["https://cdn.discordapp.com/attachments/1251252569691656204/1251636639982424096/image.png?ex=666f4cf5&is=666dfb75&hm=d9fa04db43825e72e186174ca01434bb5b5086245912d1d20283e3bc189f04aa&"],"5 blocs d'émeraude","","oui",["bleu"]));
-    decos.push(createDeco("vase", getPnj(7),["https://cdn.discordapp.com/attachments/1251252569691656204/1251637123216310453/image.png?ex=666f4d68&is=666dfbe8&hm=e4b503f12f239a9711678e57f39781c283f30dff74997d224ac9f3d87bea34c7&"],"5 blocs d'émeraude","","oui",["jaune"]));
-    decos.push(createDeco("vase", getPnj(7),["https://cdn.discordapp.com/attachments/1251252569691656204/1251637279860985906/image.png?ex=666f4d8d&is=666dfc0d&hm=d6466a351749313d0ba98470c51838e62a06b3f50fac124186f52f1fca49a406&"],"5 blocs d'émeraude","","oui",["bleu"]));
-    decos.push(createDeco("vase", getPnj(7),["https://cdn.discordapp.com/attachments/1251252569691656204/1251637448648163408/image.png?ex=666f4db6&is=666dfc36&hm=32cc904c31faa9d748f2d519f10ddaa48ec6b24717835599a619dfda5dad757c&"],"5 blocs d'émeraude","","oui",["violet"]));
-    decos.push(createDeco("vase", getPnj(7),["https://cdn.discordapp.com/attachments/1251252569691656204/1251637572510154773/image.png?ex=666f4dd3&is=666dfc53&hm=44cd877d9b8fd40b55d2e84a9fc266437ab0d918f5bc13e35fa168c8b3e8bc33&"],"5 blocs d'émeraude","","oui",["blanc"]));
-    decos.push(createDeco("vase", getPnj(7),["https://cdn.discordapp.com/attachments/1251252569691656204/1251637771592794212/image.png?ex=666f4e03&is=666dfc83&hm=1ccd8d1aacdffafff676f3c0869e15bddad871110f436868838e2c7066976948&"],"5 blocs d'émeraude","","oui",["rouge"]));
-    decos.push(createDeco("vase", getPnj(7),["https://cdn.discordapp.com/attachments/1251252569691656204/1251641024334266418/image.png?ex=666f510a&is=666dff8a&hm=1a0031eb76f14a1e626256e139f95bb687df32857308be2f366633d27675bc56&"],"5 blocs d'émeraude","","oui",["gris"]));
-    decos.push(createDeco("Cheminée", getPnj(8),["https://cdn.discordapp.com/attachments/1251252569691656204/1251643800791810058/image.png?ex=666f53a0&is=666e0220&hm=c77238682bae9043bf034e361719340f4ce19ffba4eb48006a68316eb1b6164f&"],"5 blocs d'émeraude","","oui",["tete deco","maison"]));
-    decos.push(createDeco("Cheminée", getPnj(8),["https://cdn.discordapp.com/attachments/1251252569691656204/1251645657375051817/image.png?ex=666f555b&is=666e03db&hm=6a0cd0cde4f9763c02d8d8be0a60a71feaaf7797b39dfed684cefd586a257ee4&"],"5 blocs d'émeraude","","oui",["tete deco","maison"]));
-    decos.push(createDeco("Cheminée", getPnj(8),["https://cdn.discordapp.com/attachments/1251252569691656204/1251645806755188757/image.png?ex=666f557e&is=666e03fe&hm=5ebf7c75dc65d383864717bc670d1148bfe8a1ded43e3abd6e69bf1abf72241a&"],"5 blocs d'émeraude","","oui",["tete deco","maison"]));
-    decos.push(createDeco("Cheminée", getPnj(8),["https://cdn.discordapp.com/attachments/1251252569691656204/1251646011806453780/image.png?ex=666f55af&is=666e042f&hm=0da2b90b638d7d8e75c6989bd6d4c4cd96ba07648cfcfa07f9a1634e7be0db72&"],"5 blocs d'émeraude","","oui",["tete deco","maison"]));
-    decos.push(createDeco("Cheminée", getPnj(8),["https://cdn.discordapp.com/attachments/1251252569691656204/1251646163233407026/image.png?ex=666f55d3&is=666e0453&hm=762405a4b8c70e6a2ee952aa6d890481d930a503313076b2f3a3217d93bfb212&"],"5 blocs d'émeraude","","oui",["tete deco","maison"]));
-    decos.push(createDeco("Cheminée", getPnj(8),["https://cdn.discordapp.com/attachments/1251252569691656204/1251646261178929262/image.png?ex=666f55eb&is=666e046b&hm=426ed58894eb9608aaf3eeaba861dd665c2ee2cf901c2669be8d8711f81e0142&"],"5 blocs d'émeraude","","oui",["tete deco","maison"]));
-    decos.push(createDeco("Cheminée", getPnj(8),["https://cdn.discordapp.com/attachments/1251252569691656204/1251647065235263488/image.png?ex=666f56aa&is=666e052a&hm=21411e5c828e44cf70022f365e47c601e7bdb509e8ad0e82f6f7f7ceed8685e2&"],"5 blocs d'émeraude","","oui",["tete deco","maison"]));
-    decos.push(createDeco("Masque homme", getPnj(9),["https://cdn.discordapp.com/attachments/1251252569691656204/1251784307345719336/image.png?ex=666fd67b&is=666e84fb&hm=18fbbb7f9d6ac2439ac19c041d2b95ececed2ea46722f940060dbc5c4c905dae&"],"2 blocs d'émeraude","","oui",["tete deco","masque","personnage","homme"]));
-    decos.push(createDeco("Masque homme", getPnj(9),["https://cdn.discordapp.com/attachments/1251252569691656204/1251784637202698270/image.png?ex=666fd6ca&is=666e854a&hm=1971d3bf22820ea121ca459d5f0fa35d20cce24c42736653ef2e9c24b754be95&"],"2 blocs d'émeraude","","oui",["tete deco","masque","personnage","homme"]));
-    decos.push(createDeco("Masque homme", getPnj(9),["https://cdn.discordapp.com/attachments/1251252569691656204/1251784821760593991/image.png?ex=666fd6f6&is=666e8576&hm=28a89fc197b782ff871e6f75e4f04abdbdbfac8151119394e91504a27e8576cc&"],"2 blocs d'émeraude","","oui",["tete deco","masque","personnage","homme"]));
-    decos.push(createDeco("Masque homme", getPnj(9),["https://cdn.discordapp.com/attachments/1251252569691656204/1251784937195966485/image.png?ex=666fd712&is=666e8592&hm=d9678b47a8dc716e973af172aea0d3b34fbf2fe7b94694884a102d2476fbed8d&"],"2 blocs d'émeraude","","oui",["tete deco","masque","personnage","homme"]));
-    decos.push(createDeco("Masque femme", getPnj(9),["https://cdn.discordapp.com/attachments/1251252569691656204/1251785075763314728/image.png?ex=666fd733&is=666e85b3&hm=612f7a1ddcb03225a23fbf43d51429604eeee142312685e4c74a6b1b32066f96&"],"2 blocs d'émeraude","","oui",["tete deco","masque","personnage","femme"]));
-    decos.push(createDeco("Masque femme", getPnj(9),["https://cdn.discordapp.com/attachments/1251252569691656204/1251785189382950954/image.png?ex=666fd74e&is=666e85ce&hm=262eb95c1312dc89d8627b4945b5f5009c0f0989f51837cad921f3bb0bcbcfff&"],"2 blocs d'émeraude","","oui",["tete deco","masque","personnage","femme"]));
-    decos.push(createDeco("Masque femme", getPnj(9),["https://cdn.discordapp.com/attachments/1251252569691656204/1251785306999488584/image.png?ex=666fd76a&is=666e85ea&hm=d5828e661895271506e479dea01a1f08725e82dcdcc632ed54f397a005760da1&"],"2 blocs d'émeraude","","oui",["tete deco","masque","personnage","femme"]));
-    decos.push(createDeco("Masque femme", getPnj(9),["https://cdn.discordapp.com/attachments/1251252569691656204/1251785483005202534/image.png?ex=666fd794&is=666e8614&hm=c1b71b40f5d0c1f83d17ac8684dd983e63f3e9daec2647ef2573886f63d967d0&"],"2 blocs d'émeraude","","oui",["tete deco","masque","personnage","femme"]));
-    decos.push(createDeco("Feuilles", getPnj(10),["https://cdn.discordapp.com/attachments/1251252569691656204/1251787565216825344/image.png?ex=666fd984&is=666e8804&hm=84316d2cffe985d75484d3f0455e8a9133476fe2e582f8c7eb8cf5c947b9276c&"],"5 blocs d'émeraude","","oui",["tete deco","arbre","plante"]));
-    decos.push(createDeco("Feuilles", getPnj(10),["https://cdn.discordapp.com/attachments/1251252569691656204/1251787755785158696/image.png?ex=666fd9b2&is=666e8832&hm=c9953a67fc27881945517caf310b633d9a8d012e4c1c31914c7aa5316180f1c1&"],"5 blocs d'émeraude","","oui",["tete deco","arbre","plante"]));
-    decos.push(createDeco("Feuilles", getPnj(10),["https://cdn.discordapp.com/attachments/1251252569691656204/1251788052448149525/image.png?ex=666fd9f8&is=666e8878&hm=0ed47eb17efa7df51b44ac5a9797671177e0a9e72ae5534c6d5984912e1ec7f0&"],"5 blocs d'émeraude","","oui",["tete deco","arbre","plante"]));
-    decos.push(createDeco("Tronc et Feuilles", getPnj(10),["https://cdn.discordapp.com/attachments/1251252569691656204/1251788159679856691/image.png?ex=666fda12&is=666e8892&hm=04be77541dbce4128178b8df7f0ee915e6cad2e58876db18eace0449784d16f6&"],"5 blocs d'émeraude","","oui",["tete deco","arbre","plante", "bois"]));
-    decos.push(createDeco("Tronc et Feuilles", getPnj(10),["https://cdn.discordapp.com/attachments/1251252569691656204/1251788301686407180/image.png?ex=666fda34&is=666e88b4&hm=5aa5d5ed1cc44fd7fe02bb2929db6dc986424ad1d5dc91f468087ac68afb9a31&"],"5 blocs d'émeraude","","oui",["tete deco","arbre","plante", "bois"]));
-    decos.push(createDeco("Tronc et Feuilles", getPnj(10),["https://cdn.discordapp.com/attachments/1251252569691656204/1251788449569308724/image.png?ex=666fda57&is=666e88d7&hm=645816af51621bf9ac385de8b414dc82fc2028b2e67bc42e1ae619ae60c37252&"],"5 blocs d'émeraude","","oui",["tete deco","arbre","plante", "bois"]));
-    decos.push(createDeco("Lampion Exterieur", getPnj(11),["https://cdn.discordapp.com/attachments/1251252569691656204/1251793927661551707/image.png?ex=666fdf71&is=666e8df1&hm=4986f500dd89fdccea69b597705aadf2bc0aad035d1525d793ec0d7caddc23a3&"],"5 blocs d'émeraude","","oui",["tete deco","lampion"]));
-    decos.push(createDeco("Lampion rouge", getPnj(11),["https://cdn.discordapp.com/attachments/1251252569691656204/1251794403287236638/image.png?ex=666fdfe2&is=666e8e62&hm=fda67d85161d22bd2cbfeb320016d0c3e5838b1cd6ee699f17ed0a035e4f542d&"],"5 blocs d'émeraude","","oui",["tete deco","lampion"]));
-    decos.push(createDeco("Lampion Exotique", getPnj(11),["https://cdn.discordapp.com/attachments/1251252569691656204/1251794622234103849/image.png?ex=666fe017&is=666e8e97&hm=bff9bd2ece692c588f03a1b00aeb298be5b77d534f3f1eb934c699c3119cf01e&"],"5 blocs d'émeraude","","oui",["tete deco","lampion"]));
-    decos.push(createDeco("Lampion Vert", getPnj(11),["https://cdn.discordapp.com/attachments/1251252569691656204/1251794804782923856/image.png?ex=666fe042&is=666e8ec2&hm=bbdf0c01bbf6ef624bb8e19ee0b43049fb96930b5ee2ba8b8a39401e387b9d5c&"],"5 blocs d'émeraude","","oui",["tete deco","lampion"]));
-    decos.push(createDeco("Lampion Bicolore", getPnj(11),["https://cdn.discordapp.com/attachments/1251252569691656204/1251794946927886406/image.png?ex=666fe064&is=666e8ee4&hm=d036db3c304c854403ba509565ff51253cb14c65b94062082f6f0b33f5602199&"],"5 blocs d'émeraude","","oui",["tete deco","lampion"]));
-    decos.push(createDeco("Lampion Orange", getPnj(11),["https://cdn.discordapp.com/attachments/1251252569691656204/1251795121880698881/image.png?ex=666fe08e&is=666e8f0e&hm=4385ee0c8cca2dfaa7e5e81c5af8537a481b1e82a1f5f075b58900eb64af114b&"],"5 blocs d'émeraude","","oui",["tete deco","lampion"]));
-    decos.push(createDeco("Lampion Rose", getPnj(11),["https://cdn.discordapp.com/attachments/1251252569691656204/1251795239962935337/image.png?ex=666fe0aa&is=666e8f2a&hm=8d6644734dfef02502dc6ca663c05d57bde310ba209e29cda63805a3de36c1ed&"],"5 blocs d'émeraude","","oui",["tete deco","lampion"]));
-    decos.push(createDeco("Lampion de fête", getPnj(11),["https://cdn.discordapp.com/attachments/1251252569691656204/1251795386667110420/image.png?ex=666fe0cd&is=666e8f4d&hm=3d36cb60da87d616c05aa891570f7f4a13ea5cb72666577972091a5586364f8b&"],"5 blocs d'émeraude","","oui",["tete deco","lampion"]));
-    decos.push(createDeco("Lampion festif", getPnj(11),["https://cdn.discordapp.com/attachments/1251252569691656204/1251795526383570994/image.png?ex=666fe0ee&is=666e8f6e&hm=1bdf980220855359c85b4265e8976d9ab7fca9c3d69368dc09eccf32da552f51&"],"5 blocs d'émeraude","","oui",["tete deco","lampion"]));
-    decos.push(createDeco("Chapeau crabe", getPnj(12),[""],"5 blocs d'émeraude","","oui",["tete","crabe"]));
+    decos.push(createDeco("Lilas en pot", getPnj(3),"vase + 64 poudres d'os","","oui",["plante","fleur"]));
+    decos.push(createDeco("Schlumbergera en pot", getPnj(3),"vase + 64 poudres d'os","","oui",["plante","fleur"]));
+    decos.push(createDeco("Cactus en pot", getPnj(3),"vase + 64 poudres d'os","","oui",["plante","cactus"]));
+    decos.push(createDeco("vase noir", getPnj(5),"5 blocs d'émeraude","","oui",["noir"]));
+    decos.push(createDeco("vase orange", getPnj(5),"5 blocs d'émeraude","","oui",["orange"]));
+    decos.push(createDeco("vase marron", getPnj(5),"5 blocs d'émeraude","","oui",["marron"]));
+    decos.push(createDeco("vase jaune", getPnj(5),"5 blocs d'émeraude","","oui",["jaune"]));
+    decos.push(createDeco("vase violet", getPnj(5),"5 blocs d'émeraude","","oui",["violet"]));
+    decos.push(createDeco("vase blanc", getPnj(5),"5 blocs d'émeraude","","oui",["blanc"]));
+    decos.push(createDeco("vase bleu", getPnj(5),"5 blocs d'émeraude","","oui",["bleu"]));
+    decos.push(createDeco("vase vert", getPnj(5),"5 blocs d'émeraude","","oui",["vert"]));
+    decos.push(createDeco("Farine", getPnj(6),"5 blocs d'émeraude","","oui",["ingredient"]));
+    decos.push(createDeco("Pain", getPnj(6),"5 blocs d'émeraude","","oui",["pain"]));
+    decos.push(createDeco("Pain moisi", getPnj(6),"5 blocs d'émeraude","","oui",["pain"]));
+    decos.push(createDeco("Pain de seigle", getPnj(6),"5 blocs d'émeraude","","oui",["pain"]));
+    decos.push(createDeco("Pain de romarin", getPnj(6),"5 blocs d'émeraude","","oui",["pain"]));
+    decos.push(createDeco("Pain aux noix de raisin", getPnj(6),"5 blocs d'émeraude","","oui",["pain"]));
+    decos.push(createDeco("Pain au levain", getPnj(6),"5 blocs d'émeraude","","oui",["pain"]));
+    decos.push(createDeco("vase rose", getPnj(7),"5 blocs d'émeraude","","oui",["rose"]));
+    decos.push(createDeco("vase bleu foncé", getPnj(7),"5 blocs d'émeraude","","oui",["bleu"]));
+    decos.push(createDeco("vase jaune 2", getPnj(7),"5 blocs d'émeraude","","oui",["jaune"]));
+    decos.push(createDeco("vase cyan", getPnj(7),"5 blocs d'émeraude","","oui",["bleu"]));
+    decos.push(createDeco("vase violet foncé", getPnj(7),"5 blocs d'émeraude","","oui",["violet"]));
+    decos.push(createDeco("vase blanc jaune", getPnj(7),"5 blocs d'émeraude","","oui",["blanc"]));
+    decos.push(createDeco("vase rouge", getPnj(7),"5 blocs d'émeraude","","oui",["rouge"]));
+    decos.push(createDeco("vase gris", getPnj(7),"5 blocs d'émeraude","","oui",["gris"]));
+    decos.push(createDeco("Cheminée en brique", getPnj(8),"5 blocs d'émeraude","","oui",["tete deco","maison"]));
+    decos.push(createDeco("Cheminée en pierre taillée moussue", getPnj(8),"5 blocs d'émeraude","","oui",["tete deco","maison"]));
+    decos.push(createDeco("Cheminée en pierre moussue", getPnj(8),"5 blocs d'émeraude","","oui",["tete deco","maison"]));
+    decos.push(createDeco("Cheminée en roche lisse", getPnj(8),"5 blocs d'émeraude","","oui",["tete deco","maison"]));
+    decos.push(createDeco("Cheminée pierre", getPnj(8),"5 blocs d'émeraude","","oui",["tete deco","maison"]));
+    decos.push(createDeco("Cheminée en roche", getPnj(8),"5 blocs d'émeraude","","oui",["tete deco","maison"]));
+    decos.push(createDeco("Cheminée pierre taillée", getPnj(8),"5 blocs d'émeraude","","oui",["tete deco","maison"]));
+    decos.push(createDeco("Masque homme 1", getPnj(9),"2 blocs d'émeraude","","oui",["tete deco","masque","personnage","homme"]));
+    decos.push(createDeco("Masque homme 2", getPnj(9),"2 blocs d'émeraude","","oui",["tete deco","masque","personnage","homme"]));
+    decos.push(createDeco("Masque homme 3", getPnj(9),"2 blocs d'émeraude","","oui",["tete deco","masque","personnage","homme"]));
+    decos.push(createDeco("Masque homme 4", getPnj(9),"2 blocs d'émeraude","","oui",["tete deco","masque","personnage","homme"]));
+    decos.push(createDeco("Masque femme 1", getPnj(9),"2 blocs d'émeraude","","oui",["tete deco","masque","personnage","femme"]));
+    decos.push(createDeco("Masque femme 2", getPnj(9),"2 blocs d'émeraude","","oui",["tete deco","masque","personnage","femme"]));
+    decos.push(createDeco("Masque femme 3", getPnj(9),"2 blocs d'émeraude","","oui",["tete deco","masque","personnage","femme"]));
+    decos.push(createDeco("Masque femme 4", getPnj(9),"2 blocs d'émeraude","","oui",["tete deco","masque","personnage","femme"]));
+    decos.push(createDeco("Feuilles 1", getPnj(10),"5 blocs d'émeraude","","oui",["tete deco","arbre","plante"]));
+    decos.push(createDeco("Feuilles 2", getPnj(10),"5 blocs d'émeraude","","oui",["tete deco","arbre","plante"]));
+    decos.push(createDeco("Feuilles 3", getPnj(10),"5 blocs d'émeraude","","oui",["tete deco","arbre","plante"]));
+    decos.push(createDeco("Tronc et Feuilles 1", getPnj(10),"5 blocs d'émeraude","","oui",["tete deco","arbre","plante", "bois"]));
+    decos.push(createDeco("Tronc et Feuilles 2", getPnj(10),"5 blocs d'émeraude","","oui",["tete deco","arbre","plante", "bois"]));
+    decos.push(createDeco("Tronc et Feuilles 3", getPnj(10),"5 blocs d'émeraude","","oui",["tete deco","arbre","plante", "bois"]));
+    decos.push(createDeco("Lampion Exterieur", getPnj(11),"5 blocs d'émeraude","","oui",["tete deco","lampion"]));
+    decos.push(createDeco("Lampion rouge", getPnj(11),"5 blocs d'émeraude","","oui",["tete deco","lampion"]));
+    decos.push(createDeco("Lampion Exotique", getPnj(11),"5 blocs d'émeraude","","oui",["tete deco","lampion"]));
+    decos.push(createDeco("Lampion Vert", getPnj(11),"5 blocs d'émeraude","","oui",["tete deco","lampion"]));
+    decos.push(createDeco("Lampion Bicolore", getPnj(11),"5 blocs d'émeraude","","oui",["tete deco","lampion"]));
+    decos.push(createDeco("Lampion Orange", getPnj(11),"5 blocs d'émeraude","","oui",["tete deco","lampion"]));
+    decos.push(createDeco("Lampion Rose", getPnj(11),"5 blocs d'émeraude","","oui",["tete deco","lampion"]));
+    decos.push(createDeco("Lampion de fête", getPnj(11),"5 blocs d'émeraude","","oui",["tete deco","lampion"]));
+    decos.push(createDeco("Lampion festif", getPnj(11),"5 blocs d'émeraude","","oui",["tete deco","lampion"]));
+    decos.push(createDeco("Chapeau crabe", getPnj(12),"5 blocs d'émeraude","","oui",["tete","crabe"]));
     /**
      * données decos
      */
@@ -460,11 +460,10 @@
     const params = new URLSearchParams(window.location.search);
     let recherche = params.get("recherche");
     const result = recherche === undefined || recherche === null || recherche === "" ? decos :  searchDeco(recherche);
-    //console.log(result.length === 0 ? "Pas de résultat" : result);x
 
     const createDecoRender = (deco) =>{
         let divMD4 = document.createElement('div');
-        divMD4.className = "col-md-4";
+        divMD4.className = "col-md-3";
 
         let divPB2 = document.createElement('div');
         divPB2.className = "mb-3 pb-2";
@@ -474,7 +473,7 @@
 
         let divPost = document.createElement('div')
         divPost.className = "post"
-        divPost.style = "background-image:url('" + deco.images[0] +"');"
+        divPost.style = `background-image:url('${deco.image}');`
 
         let divContent = document.createElement('div');
         divContent.className = "content";
@@ -485,21 +484,21 @@
 
         let pmb1 = document.createElement('p');
         pmb1.className = "description mb-1";
-        pmb1.innerHTML = "Pnj: " + deco._pnj_id._name + " / Ville : " + deco.pnj_id.ville_id.name + " <br> position : " + deco.pnj_id.position
+        pmb1.innerHTML = `Pnj: ${deco.pnj_id.name} / Ville : ${deco.pnj_id.ville_id.name} <br> position : ${deco.pnj_id.coordinates}`
 
         let divAction = document.createElement('div');
         divAction.className = "action";
 
         let spanValue = document.createElement('span');
         spanValue.className = "value";
-        spanValue.innerHTML = "prix"
+        spanValue.innerHTML = deco.price
 
         let h6Date = document.createElement('h6');
         h6Date.className = "date";
 
         let spanValueCraft = document.createElement('span');
         spanValueCraft.className = "value";
-        spanValueCraft.innerHTML = "prix"
+        spanValueCraft.innerHTML = deco.craftable === "oui" ? "Achetable" : "Non-achetables";
 
         h6Date.appendChild(spanValueCraft);
         divContent.appendChild(h5);
@@ -519,7 +518,6 @@
     console.log(result)
     result.forEach(deco =>{
         listDecos.appendChild(createDecoRender(deco));
-
     });
 
 </script>
