@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Copyright © 2023 Alméria - Azuriom  -  Serveur semi-rp 1.20.1 - Tous droits réservés">
@@ -72,8 +71,8 @@
         <link href="https://almeria-mc.fr/assets/themes/deluxe/css/components/discord.css?v1.1.7" rel="stylesheet">
 
         <!-- Page level styles -->
-    </head>
     <meta charset="UTF-8">
+    <title></title>
 </head>
 <body data-bs-theme="dark">
 <script type="text/javascript">
@@ -222,35 +221,54 @@
         });
         return result;
     }
-    const searchDeco = (recherche) =>{
-        let result = [];
-        decos.forEach(deco =>{
-            if(calculate(recherche,deco._name)){
-                if(!result.includes(deco)){
-                    result.push(deco);
-                }
-            }
-        });
 
-        searchInVille(recherche).forEach(ville=>{
-            getDecoInVille(ville,decos).forEach(deco => {
-                if(!result.includes(deco)){
-                    result.push(deco);
-                }
+    const searchInTags = (recherche)=>{
+        const result = []
+        decos.forEach(deco => {
+            deco.tags.forEach(tag=>{
+                if(calculate(recherche,tag))
+                    if(!result.includes(deco))
+                        result.push(deco);
             });
         });
-
-        getPnjByName(recherche).forEach(pnj => {
-            getDecoInPnj(pnj).forEach(deco => {
-                if(!result.includes(deco)){
-                    result.push(deco);
-                }
-            });
-        });
-
-        //ajouter les tags plus tard
         return result;
     }
+    const searchDeco = (recherche) =>{
+        let result = [];
+        const splitSearch = recherche.split(" ");
+
+        splitSearch.forEach(word=>{
+
+            decos.forEach(deco =>{
+                if(calculate(word,deco._name)){
+                    if(!result.includes(deco))
+                        result.push(deco);
+                }
+            });
+
+            searchInVille(word).forEach(ville=>{
+                getDecoInVille(ville,decos).forEach(deco => {
+                    if(!result.includes(deco))
+                        result.push(deco);
+                });
+            });
+
+            getPnjByName(word).forEach(pnj => {
+                getDecoInPnj(pnj).forEach(deco => {
+                    if(!result.includes(deco))
+                        result.push(deco);
+                });
+            });
+
+            searchInTags(word).forEach(deco=>{
+                if(!result.includes(deco))
+                    result.push(deco);
+            });
+
+        });
+        return result;
+    }
+
 
     let villes = [];
     let pnjs =[];
@@ -277,6 +295,7 @@
     const Helios = "Helios";
     const Kotaiblis = "Kotaiblis";
     const Alorah = "Alorah";
+    const Blackbay = "Blackbay";
 
     villes.push(new Villes(Eriador, ["jerem1664", "Nisudry"]));
     villes.push(new Villes(Yrias, ["_Ybrakxar"]));
@@ -295,6 +314,7 @@
     villes.push(new Villes(Helios,["LeftForDeath6"]));
     villes.push(new Villes(Kotaiblis,["Xof__"]));
     villes.push(new Villes(Alorah,["Gorderok", "Zzheyd"]));
+    villes.push(new Villes(Blackbay,["Arcks21"]));
     /**
      * data ville
      */
@@ -331,18 +351,18 @@
     /**
      * données decos
      */
-    decos.push(createDeco("Pousse de Bambou", getPnj(1),"5 blocs d'émeraude","","oui",["bambou","plante"]));
-    decos.push(createDeco("Tronc De Bambou", getPnj(1),"5 blocs d'émeraude","","oui",["bambou","plante"]));
-    decos.push(createDeco("Citrouille Japonaise", getPnj(1),"5 blocs d'émeraude","","oui",["plante","citrouille"]));
+    decos.push(createDeco("Pousse de Bambou", getPnj(1),"5 blocs d'émeraude","","oui",["bambou","plante","pousse"]));
+    decos.push(createDeco("Tronc De Bambou", getPnj(1),"5 blocs d'émeraude","","oui",["bambou","plante","tronc"]));
+    decos.push(createDeco("Citrouille Japonaise", getPnj(1),"5 blocs d'émeraude","","oui",["plante","citrouille","japonaise"]));
     decos.push(createDeco("Durian", getPnj(1),"5 blocs d'émeraude","","oui",["plante"]));
-    decos.push(createDeco("Plan de construction", getPnj(2),"5 blocs d'émeraude","","oui",["maison","plan"]));
-    decos.push(createDeco("Bonsaï cerisier à fleurs", getPnj(3),"vase + 64 poudres d'os","","oui",["plante","arbre","cerisier","bonsaï"]));
-    decos.push(createDeco("Bonsaï ancien", getPnj(3),"vase + 64 poudres d'os","","oui",["plante","arbre","bonsaï"]));
-    decos.push(createDeco("Sabot de vénus en pot", getPnj(3),"vase + 64 poudres d'os","","oui",["plante"]));
+    decos.push(createDeco("Plan de construction", getPnj(2),"5 blocs d'émeraude","","oui",["maison","plan","construction"]));
+    decos.push(createDeco("Bonsaï cerisier à fleurs", getPnj(3),"vase + 64 poudres d'os","","oui",["plante","arbre","cerisier","bonsaï","fleurs"]));
+    decos.push(createDeco("Bonsaï ancien", getPnj(3),"vase + 64 poudres d'os","","oui",["plante","arbre","bonsaï","ancien"]));
+    decos.push(createDeco("Sabot de vénus en pot", getPnj(3),"vase + 64 poudres d'os","","oui",["plante","sabot","venus","pot"]));
     decos.push(createDeco("Bambous en pot", getPnj(3),"vase + 64 poudres d'os","","oui",["plante","bambou"]));
-    decos.push(createDeco("Roseaux en pot", getPnj(3),["https://cdn.discordapp.com/attachments/1251252569691656204/1251547440574894192/image.png?ex=666ef9e2&is=666da862&hm=7755c89b1dd3618ef7080d73a620609f8a9c9ccc5751de82f2b7175631d3c9af&"],"vase + 64 poudres d'os","","oui",["plante"]));
-    decos.push(createDeco("Lilas en pot", getPnj(3),"vase + 64 poudres d'os","","oui",["plante","fleur"]));
-    decos.push(createDeco("Schlumbergera en pot", getPnj(3),"vase + 64 poudres d'os","","oui",["plante","fleur"]));
+    decos.push(createDeco("Roseaux en pot", getPnj(3),"vase + 64 poudres d'os","","oui",["plante","roseaux","pot"]));
+    decos.push(createDeco("Lilas en pot", getPnj(3),"vase + 64 poudres d'os","","oui",["plante","fleur","pot","lilas"]));
+    decos.push(createDeco("Schlumbergera en pot", getPnj(3),"vase + 64 poudres d'os","","oui",["plante","fleur","pot","Schlumbergera"]));
     decos.push(createDeco("Cactus en pot", getPnj(3),"vase + 64 poudres d'os","","oui",["plante","cactus"]));
     decos.push(createDeco("vase noir", getPnj(5),"5 blocs d'émeraude","","oui",["noir"]));
     decos.push(createDeco("vase orange", getPnj(5),"5 blocs d'émeraude","","oui",["orange"]));
@@ -494,15 +514,10 @@
                         <div id="section-2">
                             <section class="row py-3 "  id="deco_list">
 
-
-
-
                             </section>
                         </div>
-
                     </div>
                 </div>
-
             </div>
         </div>
     </main>
@@ -514,6 +529,13 @@
     const result = recherche === undefined || recherche === null || recherche === "" ? decos :  searchDeco(recherche);
 
     const createDecoRender = (deco) =>{
+        const image = deco.image;
+        const pnj = deco.pnj_id.name;
+        const ville = deco.pnj_id.ville_id.name;
+        const coordinates = deco.pnj_id.coordinates;
+        const price = deco.price;
+        const craftable = deco.craftable === "oui" ? "Achetable" : "Non-achetables"
+
         let divMD4 = document.createElement('div');
         divMD4.className = "col-md-3";
 
@@ -525,7 +547,7 @@
 
         let divPost = document.createElement('div')
         divPost.className = "post"
-        divPost.style = `background-image:url('${deco.image}');`
+        divPost.style = `background-image:url('${image}');`
 
         let divContent = document.createElement('div');
         divContent.className = "content";
@@ -536,21 +558,21 @@
 
         let pmb1 = document.createElement('p');
         pmb1.className = "description mb-1";
-        pmb1.innerHTML = `Pnj: ${deco.pnj_id.name} / Ville : ${deco.pnj_id.ville_id.name} <br> position : ${deco.pnj_id.coordinates}`
+        pmb1.innerHTML = `Pnj: ${pnj} / Ville : ${ville} <br> position : ${coordinates}`
 
         let divAction = document.createElement('div');
         divAction.className = "action";
 
         let spanValue = document.createElement('span');
         spanValue.className = "value";
-        spanValue.innerHTML = deco.price
+        spanValue.innerHTML = price;
 
         let h6Date = document.createElement('h6');
         h6Date.className = "date";
 
         let spanValueCraft = document.createElement('span');
         spanValueCraft.className = "value";
-        spanValueCraft.innerHTML = deco.craftable === "oui" ? "Achetable" : "Non-achetables";
+        spanValueCraft.innerHTML = craftable;
 
         h6Date.appendChild(spanValueCraft);
         divContent.appendChild(h5);
