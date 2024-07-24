@@ -268,7 +268,25 @@
         });
         return result;
     }
-
+    const getVille = (name)=>{
+        let result;
+        villes.forEach(ville=> {
+            if(ville._name === name){
+                result = ville
+            }
+        });
+        return result;
+    }
+    const getDecoInVille = (ville, decos)=>{
+        let result = [];
+        decos.forEach(deco=>{
+            console.log(deco)
+            if(deco._pnj_id._ville_id._name === ville){
+                result.push(deco);
+            }
+        });
+        return result;
+    }
 
     let villes = [];
     let pnjs =[];
@@ -296,18 +314,20 @@
     const Kotaiblis = "Kotaiblis";
     const Alorah = "Alorah";
     const Blackbay = "Blackbay";
+    const Pas2Ville = "Plus2Ville";
 
     villes.push(new Villes(Eriador, ["jerem1664", "Nisudry"]));
     villes.push(new Villes(Yrias, ["_Ybrakxar"]));
     villes.push(new Villes(Shinshiro, ["DVN88819"]));
+    villes.push(new Villes(Drakaina,["_Minesta_"]));
+
+    villes.push(new Villes(Rome,["kiefer_grylls", "klein1445"]));
     villes.push(new Villes(Florenia,["Flifloux"]));
     villes.push(new Villes(Highland,["MissDu39","Kimalo"]));
-    villes.push(new Villes(Rome,["kiefer_grylls", "klein1445"]));
     villes.push(new Villes(Imynda,["Djox79"]));
     villes.push(new Villes(Inpou,["Gorderok", "Zzheyd"]));
     villes.push(new Villes(Almeria,["Gorderok", "Zzheyd"]));
     villes.push(new Villes(Azuria,["Zappax0"]));
-    villes.push(new Villes(Drakaina,["_Minesta_"]));
     villes.push(new Villes(Nakaram,["Adidix"]));
     villes.push(new Villes(Villers,["Tintin1712"]));
     villes.push(new Villes(Nassau,["Glommery"]));
@@ -315,18 +335,12 @@
     villes.push(new Villes(Kotaiblis,["Xof__"]));
     villes.push(new Villes(Alorah,["Gorderok", "Zzheyd"]));
     villes.push(new Villes(Blackbay,["Arcks21"]));
+
+    villes.push(new Villes(Pas2Ville,["Pas2Maire"]));
     /**
      * data ville
      */
-    const getVille = (name)=>{
-        let result;
-        villes.forEach(ville=> {
-            if(ville._name === name){
-                result = ville
-            }
-        });
-        return result;
-    }
+
     /**
      * données pnj
      */
@@ -345,6 +359,19 @@
     pnjs.push(new Pnj(12,"Haruki","x=-14454,y=65,z=1036",getVille(Shinshiro)))
     pnjs.push(new Pnj(13,"Belba Bessac","x=-16537,y=70,z=-4098",getVille(Eriador)))
     pnjs.push(new Pnj(14,"Adalgrim Touc","x=-16537,y=70,z=-4098",getVille(Eriador)))
+    pnjs.push(new Pnj(15,"Drogo","x=-16741,y=79,z=-3919",getVille(Eriador)))
+    pnjs.push(new Pnj(16,"Meriadoc Brandibouc","x=-16839,y=88,z=-3918",getVille(Eriador)))
+    pnjs.push(new Pnj(17,"Clayborn","x=-16652,y=69,z=-4086",getVille(Eriador)))
+    pnjs.push(new Pnj(18,"Sydell","x=-16654,y=69,z=-4096",getVille(Eriador)))
+    pnjs.push(new Pnj(19,"Sigrid","x=-8448,y=76,z=12304",getVille(Drakaina)))
+    pnjs.push(new Pnj(20,"Sigurd","x=-8440,y=75,z=12704",getVille(Drakaina)))
+    pnjs.push(new Pnj(21,"Milchou","x=-8540,y=72,z=12742",getVille(Drakaina)))
+    pnjs.push(new Pnj(22,"Gunnvor","x=-8546,y=72,z=12754",getVille(Drakaina)))
+    pnjs.push(new Pnj(23,"Finnbjorn","x=-8546,y=72,z=12754",getVille(Drakaina)))
+    pnjs.push(new Pnj(23,"Asulf","x=-8538,y=76,z=12803",getVille(Drakaina)))
+
+
+    pnjs.push(new Pnj(42,"Plus la","Absente",getVille(Pas2Ville)))
     /**
      * données pnj
      */
@@ -410,84 +437,135 @@
     decos.push(createDeco("Tronc et Feuilles 1", getPnj(10),"5 blocs d'émeraude","","oui",["tete deco","arbre","plante", "bois"]));
     decos.push(createDeco("Tronc et Feuilles 2", getPnj(10),"5 blocs d'émeraude","","oui",["tete deco","arbre","plante", "bois"]));
     decos.push(createDeco("Tronc et Feuilles 3", getPnj(10),"5 blocs d'émeraude","","oui",["tete deco","arbre","plante", "bois"]));
-    decos.push(createDeco("Lampion rouge simple", getPnj(11),"64 teintures rouges / 1 Almericoins bronze ","","oui",["lampion"]));
-    decos.push(createDeco("Lampion rouge à frange", getPnj(11),"Lampion rouge simple / 16 pepites d'or","","oui",["lampion"]));
-    decos.push(createDeco("Lampion rouge colonne", getPnj(11),"3 Lampion rouge simple / 32 papier","","oui",["lampion"]));
-    decos.push(createDeco("Mini-Lampion rouge double droit", getPnj(11),"1 Lampion rouge simple / 1 baton","","oui",["lampion"]));
-    decos.push(createDeco("Mini-Lampion rouge double de coin", getPnj(11),"1 Lampion rouge simple / 1 baton","","oui",["lampion"]));
-    decos.push(createDeco("Lampion bleu simple", getPnj(11),"64 teintures bleus / 1 Almericoins bronze ","","oui",["lampion"]));
-    decos.push(createDeco("Lampion bleu à frange", getPnj(11),"Lampion bleu simple / 16 pepites d'or","","oui",["lampion"]));
-    decos.push(createDeco("Lampion bleu colonne", getPnj(11),"3 Lampion bleu simple / 32 papier","","oui",["lampion"]));
-    decos.push(createDeco("Mini-Lampion bleu double droit", getPnj(11),"1 Lampion bleu simple / 1 baton","","oui",["lampion"]));
-    decos.push(createDeco("Mini-Lampion bleu double de coin", getPnj(11),"1 Lampion bleu simple / 1 baton","","oui",["lampion"]));
-    decos.push(createDeco("Lampion vert simple", getPnj(11),"64 teintures verts / 1 Almericoins bronze ","","oui",["lampion"]));
-    decos.push(createDeco("Lampion vert à frange", getPnj(11),"Lampion vert simple / 16 pepites d'or","","oui",["lampion"]));
-    decos.push(createDeco("Lampion vert colonne", getPnj(11),"3 Lampion vert simple / 32 papier","","oui",["lampion"]));
-    decos.push(createDeco("Mini-Lampion vert double droit", getPnj(11),"1 Lampion vert simple / 1 baton","","oui",["lampion"]));
-    decos.push(createDeco("Mini-Lampion vert double de coin", getPnj(11),"1 Lampion vert simple / 1 baton","","oui",["lampion"]));
-    decos.push(createDeco("Lampion gris simple", getPnj(11),"64 teintures griss / 1 Almericoins bronze ","","oui",["lampion"]));
-    decos.push(createDeco("Lampion gris à frange", getPnj(11),"Lampion gris simple / 16 pepites d'or","","oui",["lampion"]));
-    decos.push(createDeco("Lampion gris colonne", getPnj(11),"3 Lampion gris simple / 32 papier","","oui",["lampion"]));
-    decos.push(createDeco("Mini-Lampion gris double droit", getPnj(11),"1 Lampion gris simple / 1 baton","","oui",["lampion"]));
-    decos.push(createDeco("Mini-Lampion gris double de coin", getPnj(11),"1 Lampion gris simple / 1 baton","","oui",["lampion"]));
-    decos.push(createDeco("Lampion orange simple", getPnj(11),"64 teintures oranges / 1 Almericoins bronze ","","oui",["lampion"]));
-    decos.push(createDeco("Lampion orange à frange", getPnj(11),"Lampion orange simple / 16 pepites d'or","","oui",["lampion"]));
-    decos.push(createDeco("Lampion orange colonne", getPnj(11),"3 Lampion orange simple / 32 papier","","oui",["lampion"]));
-    decos.push(createDeco("Mini-Lampion orange double droit", getPnj(11),"1 Lampion orange simple / 1 baton","","oui",["lampion"]));
-    decos.push(createDeco("Mini-Lampion orange double de coin", getPnj(11),"1 Lampion orange simple / 1 baton","","oui",["lampion"]));
-    decos.push(createDeco("Lampion rose simple", getPnj(11),"64 teintures roses / 1 Almericoins bronze ","","oui",["lampion"]));
-    decos.push(createDeco("Lampion rose à frange", getPnj(11),"Lampion rose simple / 16 pepites d'or","","oui",["lampion"]));
-    decos.push(createDeco("Lampion rose colonne", getPnj(11),"3 Lampion rose simple / 32 papier","","oui",["lampion"]));
-    decos.push(createDeco("Mini-Lampion rose double droit", getPnj(11),"1 Lampion rose simple / 1 baton","","oui",["lampion"]));
-    decos.push(createDeco("Mini-Lampion rose double de coin", getPnj(11),"1 Lampion rose simple / 1 baton","","oui",["lampion"]));
-    decos.push(createDeco("Lampion violet simple", getPnj(11),"64 teintures violet  s / 1 Almericoins bronze ","","oui",["lampion"]));
-    decos.push(createDeco("Lampion violet à frange", getPnj(11),"Lampion violet simple / 16 pepites d'or","","oui",["lampion"]));
-    decos.push(createDeco("Lampion violet colonne", getPnj(11),"3 Lampion violet simple / 32 papier","","oui",["lampion"]));
-    decos.push(createDeco("Mini-Lampion violet double droit", getPnj(11),"1 Lampion violet simple / 1 baton","","oui",["lampion"]));
-    decos.push(createDeco("Mini-Lampion violet double de coin", getPnj(11),"1 Lampion violet simple / 1 baton","","oui",["lampion"]));
-    decos.push(createDeco("Lampion jaune simple", getPnj(11),"64 teintures   jaune  s / 1 Almericoins bronze ","","oui",["lampion"]));
-    decos.push(createDeco("Lampion jaune à frange", getPnj(11),"Lampion jaune simple / 16 pepites d'or","","oui",["lampion"]));
-    decos.push(createDeco("Lampion jaune colonne", getPnj(11),"3 Lampion jaune simple / 32 papier","","oui",["lampion"]));
-    decos.push(createDeco("Mini-Lampion jaune double droit", getPnj(11),"1 Lampion jaune simple / 1 baton","","oui",["lampion"]));
-    decos.push(createDeco("Mini-Lampion jaune double de coin", getPnj(11),"1 Lampion jaune simple / 1 baton","","oui",["lampion"]));
+    decos.push(createDeco("Lampion rouge simple", getPnj(11),"64 teintures rouges / 1 Almericoins bronze ","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Lampion rouge à frange", getPnj(11),"Lampion rouge simple / 16 pepites d'or","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Lampion rouge colonne", getPnj(11),"3 Lampion rouge simple / 32 papier","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Mini-Lampion rouge double droit", getPnj(11),"1 Lampion rouge simple / 1 baton","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Mini-Lampion rouge double de coin", getPnj(11),"1 Lampion rouge simple / 1 baton","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Lampion bleu simple", getPnj(11),"64 teintures bleus / 1 Almericoins bronze ","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Lampion bleu à frange", getPnj(11),"Lampion bleu simple / 16 pepites d'or","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Lampion bleu colonne", getPnj(11),"3 Lampion bleu simple / 32 papier","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Mini-Lampion bleu double droit", getPnj(11),"1 Lampion bleu simple / 1 baton","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Mini-Lampion bleu double de coin", getPnj(11),"1 Lampion bleu simple / 1 baton","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Lampion vert simple", getPnj(11),"64 teintures verts / 1 Almericoins bronze ","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Lampion vert à frange", getPnj(11),"Lampion vert simple / 16 pepites d'or","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Lampion vert colonne", getPnj(11),"3 Lampion vert simple / 32 papier","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Mini-Lampion vert double droit", getPnj(11),"1 Lampion vert simple / 1 baton","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Mini-Lampion vert double de coin", getPnj(11),"1 Lampion vert simple / 1 baton","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Lampion gris simple", getPnj(11),"64 teintures griss / 1 Almericoins bronze ","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Lampion gris à frange", getPnj(11),"Lampion gris simple / 16 pepites d'or","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Lampion gris colonne", getPnj(11),"3 Lampion gris simple / 32 papier","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Mini-Lampion gris double droit", getPnj(11),"1 Lampion gris simple / 1 baton","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Mini-Lampion gris double de coin", getPnj(11),"1 Lampion gris simple / 1 baton","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Lampion orange simple", getPnj(11),"64 teintures oranges / 1 Almericoins bronze ","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Lampion orange à frange", getPnj(11),"Lampion orange simple / 16 pepites d'or","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Lampion orange colonne", getPnj(11),"3 Lampion orange simple / 32 papier","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Mini-Lampion orange double droit", getPnj(11),"1 Lampion orange simple / 1 baton","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Mini-Lampion orange double de coin", getPnj(11),"1 Lampion orange simple / 1 baton","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Lampion rose simple", getPnj(11),"64 teintures roses / 1 Almericoins bronze ","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Lampion rose à frange", getPnj(11),"Lampion rose simple / 16 pepites d'or","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Lampion rose colonne", getPnj(11),"3 Lampion rose simple / 32 papier","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Mini-Lampion rose double droit", getPnj(11),"1 Lampion rose simple / 1 baton","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Mini-Lampion rose double de coin", getPnj(11),"1 Lampion rose simple / 1 baton","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Lampion violet simple", getPnj(11),"64 teintures violet  s / 1 Almericoins bronze ","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Lampion violet à frange", getPnj(11),"Lampion violet simple / 16 pepites d'or","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Lampion violet colonne", getPnj(11),"3 Lampion violet simple / 32 papier","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Mini-Lampion violet double droit", getPnj(11),"1 Lampion violet simple / 1 baton","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Mini-Lampion violet double de coin", getPnj(11),"1 Lampion violet simple / 1 baton","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Lampion jaune simple", getPnj(11),"64 teintures   jaune  s / 1 Almericoins bronze ","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Lampion jaune à frange", getPnj(11),"Lampion jaune simple / 16 pepites d'or","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Lampion jaune colonne", getPnj(11),"3 Lampion jaune simple / 32 papier","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Mini-Lampion jaune double droit", getPnj(11),"1 Lampion jaune simple / 1 baton","","oui",["lampion","lumiere"]));
+    decos.push(createDeco("Mini-Lampion jaune double de coin", getPnj(11),"1 Lampion jaune simple / 1 baton","","oui",["lampion","lumiere"]));
     decos.push(createDeco("Chapeau crabe", getPnj(12),"casque en cuir / 32 chair de crabes","","oui",["tete","crabe"]));
+    decos.push(createDeco("Lampion Exterieur",getPnj(42),"5 blocs d'émeraude","","non",["tete deco","lampion"]));
+    decos.push(createDeco("Lampion rouge", getPnj(42),"5 blocs d'émeraude","","non",["tete deco","lampion"]));
+    decos.push(createDeco("Lampion Exotique", getPnj(42),"5 blocs d'émeraude","","non",["tete deco","lampion"]));
+    decos.push(createDeco("Lampion Vert", getPnj(42),"5 blocs d'émeraude","","non",["tete deco","lampion"]));
+    decos.push(createDeco("Lampion Bicolore", getPnj(42),"5 blocs d'émeraude","","non",["tete deco","lampion"]));
+    decos.push(createDeco("Lampion Orange", getPnj(42),"5 blocs d'émeraude","","non",["tete deco","lampion"]));
+    decos.push(createDeco("Lampion Rose", getPnj(42),"5 blocs d'émeraude","","non",["tete deco","lampion"]));
+    decos.push(createDeco("Lampion de fête",getPnj(42),"5 blocs d'émeraude","","non",["tete deco","lampion"]));
+    decos.push(createDeco("Lampion festif", getPnj(42),"5 blocs d'émeraude","","non",["tete deco","lampion"]));
 
+    decos.push(createDeco("Chope de bière", getPnj(13),"2 bloc d'or brut / 64 blé","","oui",["biere","chope", "alcool","taverne"]));
+    decos.push(createDeco("Chope de vin", getPnj(13),"2 bloc d'or brut / 64 baies sucrées","","oui",["vin","chope", "alcool","taverne"]));
+    decos.push(createDeco("Bouteille1", getPnj(13),"32 verres vert / Ac de bronze","","oui",["alcool","taverne"]));
+    decos.push(createDeco("Bouteille2", getPnj(13),"32 verres violet / Ac de bronze","","oui",["alcool","taverne"]));
+    decos.push(createDeco("Barrique", getPnj(14),"16 planches de chene noir / Ac d'or","","oui",["alcool","tonneau","taverne"]));
+    decos.push(createDeco("3 Barriques", getPnj(14),"3 Barrique / Ac d'argent","","oui",["alcool","tonneau","taverne"]));
+    decos.push(createDeco("Grosse barique", getPnj(14),"64 planches de chene noir / 3 Ac d'or","","oui",["alcool","tonneau","taverne"]));
+    decos.push(createDeco("3 Grosses bariques", getPnj(14),"3 Grosse barique / Ac d'argent","","oui",["alcool","tonneau","taverne","meuble"]));
+    decos.push(createDeco("Tapis de taverne", getPnj(14),"32 laine verte / Ac de bronze","","oui",["sol","taverne"]));
+    decos.push(createDeco("Chaise de taverne", getPnj(14),"16 planches d'acajou / Ac d'or","","oui",["taverne","meuble"]));
+    decos.push(createDeco("Table de taverne", getPnj(14),"32 planches d'acajou / 5 Ac d'argent","","oui",["taverne","meuble"]));
+    decos.push(createDeco("Grande table de taverne", getPnj(14),"64 planches d'acajou / 4 Ac d'or","","oui",["taverne","meuble"]));
+    decos.push(createDeco("Banc de taverne", getPnj(14),"48 planches d'acajou / 2 Ac d'or","","oui",["taverne","meuble"]));
+    decos.push(createDeco("Lustre de taverne", getPnj(14),"5 lanterne / 3 Ac d'or","","oui",["taverne","meuble","lampe","lumiere"]));
 
-    decos.push(createDeco("Chope de bière", getPnj(13),"2 bloc d'or brut / 64 blé","","oui",["biere","chope", "alcool"]));
-    decos.push(createDeco("Chope de vin", getPnj(13),"2 bloc d'or brut / 64 baies sucrées","","oui",["vin","chope", "alcool"]));
-    decos.push(createDeco("Bouteille1", getPnj(13),"32 verres vert / Ac de bronze","","oui",["alcool"]));
-    decos.push(createDeco("Bouteille2", getPnj(13),"32 verres violet / Ac de bronze","","oui",["alcool"]));
+    decos.push(createDeco("Pasteque ouverte", getPnj(15),"5 bloc d'émeraude","","oui",["tete deco","legumes"]));
+    decos.push(createDeco("Pasteque", getPnj(15),"5 bloc d'émeraude","","oui",["tete deco","legumes"]));
+    decos.push(createDeco("Citrouille 1", getPnj(15),"5 bloc d'émeraude","","oui",["tete deco","legumes"]));
+    decos.push(createDeco("Citrouille 2", getPnj(15),"5 bloc d'émeraude","","oui",["tete deco","legumes"]));
+    decos.push(createDeco("Tonneau de raisins", getPnj(15),"tonneau vide / 2 raisin violet","","oui",["tete deco","legumes","vin"]));
+    decos.push(createDeco("Raisins rosé", getPnj(15),"5 bloc d'émeraude","","oui",["tete deco","fruit","vin"]));
+    decos.push(createDeco("Raisins Violet", getPnj(15),"5 bloc d'émeraude","","oui",["tete deco","fruit","vin"]));
+    decos.push(createDeco("Raisins noir", getPnj(15),"5 bloc d'émeraude","","oui",["tete deco","fruit","vin"]));
+    decos.push(createDeco("Raisins noir 2", getPnj(15),"5 bloc d'émeraude","","oui",["tete deco","fruit","vin"]));
+    decos.push(createDeco("Raisins blanc", getPnj(15),"5 bloc d'émeraude","","oui",["tete deco","fruit","vin"]));
+    decos.push(createDeco("Cidre de la compté", getPnj(16),"32 verre vert / raisins blanc","","oui",["alcool","vin"]));
+    decos.push(createDeco("Cuvée ecu de chene", getPnj(16),"32 verre vert / raisins rosé","","oui",["alcool","vin"]));
+    decos.push(createDeco("Rouge Uroc K ay", getPnj(16),"32 verre vert / raisins violet","","oui",["alcool","vin"]));
+    decos.push(createDeco("Champignon rouge", getPnj(17),"5 bloc d'émeraude","","oui",["tete deco","plante"]));
+    decos.push(createDeco("Champignon Marron", getPnj(17),"5 bloc d'émeraude","","oui",["tete deco","plante"]));
+    decos.push(createDeco("Champignon bleu", getPnj(17),"5 bloc d'émeraude","","oui",["tete deco","plante"]));
+    decos.push(createDeco("Champignon bleu nuit", getPnj(17),"5 bloc d'émeraude","","oui",["tete deco","plante"]));
+    decos.push(createDeco("Champignon violet", getPnj(17),"5 bloc d'émeraude","","oui",["tete deco","plante"]));
+    decos.push(createDeco("Grenadille", getPnj(18),"5 bloc d'émeraude","","oui",["tete deco","fruit"]));
+    decos.push(createDeco("Kiwi", getPnj(18),"5 bloc d'émeraude","","oui",["tete deco","fruit"]));
+    decos.push(createDeco("Orange rouge", getPnj(18),"5 bloc d'émeraude","","oui",["tete deco","fruit"]));
+    decos.push(createDeco("Goyave", getPnj(18),"5 bloc d'émeraude","","oui",["tete deco","fruit"]));
+    decos.push(createDeco("Myrtille 1", getPnj(18),"5 bloc d'émeraude","","oui",["tete deco","fruit"]));
+    decos.push(createDeco("Myrtille 2", getPnj(18),"5 bloc d'émeraude","","oui",["tete deco","fruit"]));
+    decos.push(createDeco("Pomme jaune", getPnj(18),"5 bloc d'émeraude","","oui",["tete deco","fruit"]));
+    decos.push(createDeco("Pomme verte 1", getPnj(18),"5 bloc d'émeraude","","oui",["tete deco","fruit"]));
+    decos.push(createDeco("Pomme verte 2", getPnj(18),"5 bloc d'émeraude","","oui",["tete deco","fruit"]));
+    decos.push(createDeco("Pomme orange", getPnj(18),"5 bloc d'émeraude","","oui",["tete deco","fruit"]));
+    decos.push(createDeco("Pomme rouge", getPnj(18),"5 bloc d'émeraude","","oui",["tete deco","fruit"]));
+    decos.push(createDeco("Coton", getPnj(18),"5 bloc d'émeraude","","oui",["tete deco"]));
+    decos.push(createDeco("Maïs", getPnj(18),"5 bloc d'émeraude","","oui",["tete deco","fruit"]));
 
-    decos.push(createDeco("Barrique", getPnj(14),"16 planches de chene noir / Ac d'or","","oui",["alcool","tonneau"]));
-    decos.push(createDeco("3 Barriques", getPnj(14),"3 Barrique / Ac d'argent","","oui",["alcool","tonneau"]));
-    decos.push(createDeco("Grosse barique", getPnj(14),"64 planches de chene noir / 3 Ac d'or","","oui",["alcool","tonneau"]));
-    decos.push(createDeco("3 Grosses bariques", getPnj(14),"3 Grosse barique / Ac d'argent","","oui",["alcool","tonneau"]));
-    decos.push(createDeco("Tapis", getPnj(14),"3 Grosse barique / Ac d'argent","","oui",["alcool","tonneau"]));
+    decos.push(createDeco("Sjokk fisk suspendus", getPnj(19),"5 bloc d'émeraude","","oui",["poisson"]));
+    decos.push(createDeco("Tonneau de Sjokk fisk", getPnj(19),"5 bloc d'émeraude","","oui",["poisson"]));
+    decos.push(createDeco("Bûche de chene", getPnj(20),"5 bloc d'émeraude","","oui",["tete deco","bois"]));
+    decos.push(createDeco("Bûche acajou", getPnj(20),"5 bloc d'émeraude","","oui",["tete deco","bois"]));
+    decos.push(createDeco("Bûche sapin", getPnj(20),"5 bloc d'émeraude","","oui",["tete deco","bois"]));
+    decos.push(createDeco("Bûche chene noir", getPnj(20),"5 bloc d'émeraude","","oui",["tete deco","bois"]));
+    decos.push(createDeco("Bûche acacia", getPnj(20),"5 bloc d'émeraude","","oui",["tete deco","bois"]));
+    decos.push(createDeco("Bûche bouleau", getPnj(20),"5 bloc d'émeraude","","oui",["tete deco","bois"]));
 
-    decos.push(createDeco("Lampion Exterieur",new Pnj(),"5 blocs d'émeraude","","non",["tete deco","lampion"]));
-    decos.push(createDeco("Lampion rouge", new Pnj(),"5 blocs d'émeraude","","non",["tete deco","lampion"]));
-    decos.push(createDeco("Lampion Exotique", new Pnj(),"5 blocs d'émeraude","","non",["tete deco","lampion"]));
-    decos.push(createDeco("Lampion Vert", new Pnj(),"5 blocs d'émeraude","","non",["tete deco","lampion"]));
-    decos.push(createDeco("Lampion Bicolore", new Pnj(),"5 blocs d'émeraude","","non",["tete deco","lampion"]));
-    decos.push(createDeco("Lampion Orange", new Pnj(),"5 blocs d'émeraude","","non",["tete deco","lampion"]));
-    decos.push(createDeco("Lampion Rose", new Pnj(),"5 blocs d'émeraude","","non",["tete deco","lampion"]));
-    decos.push(createDeco("Lampion de fête", new Pnj(),"5 blocs d'émeraude","","non",["tete deco","lampion"]));
-    decos.push(createDeco("Lampion festif", new Pnj(),"5 blocs d'émeraude","","non",["tete deco","lampion"]));
+    decos.push(createDeco("Pomme de pin 1", getPnj(21),"5 bloc d'émeraude","","oui",["tete deco","bois"]));
+    decos.push(createDeco("Pomme de pin 2", getPnj(21),"5 bloc d'émeraude","","oui",["tete deco","bois"]));
+    decos.push(createDeco("Tas de buche 1", getPnj(21),"5 bloc d'émeraude","","oui",["tete deco","bois"]));
+    decos.push(createDeco("Tas de buche 2", getPnj(21),"5 bloc d'émeraude","","oui",["tete deco","bois"]));
+
+    decos.push(createDeco("Chien", getPnj(22),"5 bloc d'émeraude","","oui",["tete deco","bois"]));
+    decos.push(createDeco("Loup", getPnj(22),"5 bloc d'émeraude","","oui",["tete deco","bois"]));
+    decos.push(createDeco("Belier", getPnj(22),"5 bloc d'émeraude","","oui",["tete deco","bois"]));
+
+    decos.push(createDeco("Tonneau 1", getPnj(22),"5 bloc d'émeraude","","oui",["tete deco","bois"]));
+    decos.push(createDeco("Tonneau 2", getPnj(22),"5 bloc d'émeraude","","oui",["tete deco","bois"]));
+    decos.push(createDeco("Baril 1", getPnj(22),"5 bloc d'émeraude","","oui",["tete deco","bois"]));
+    decos.push(createDeco("Baril 2", getPnj(22),"5 bloc d'émeraude","","oui",["tete deco","bois"]));
+
+    decos.push(createDeco("Plan de construction", getPnj(22),"5 bloc d'émeraude","","oui",["maison","plan","construction"]));
+
 
     /**
      * données decos
      */
 
-    const getDecoInVille = (ville, decos)=>{
-        let result = [];
-        decos.forEach(deco=>{
-            console.log(deco)
-            if(deco._pnj_id._ville_id._name === ville){
-                result.push(deco);
-            }
-        });
-        return result;
-    }
+
 
 </script>
 
