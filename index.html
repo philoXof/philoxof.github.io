@@ -322,21 +322,22 @@
     villes.push(new Villes(Drakaina,["_Minesta_"]));
     villes.push(new Villes(Rome,["kiefer_grylls", "klein1445"]));
     villes.push(new Villes(Florenia,["Flifloux"]));
-
     villes.push(new Villes(Azuria,["Zappax0"]));
 
     villes.push(new Villes(Nakaram,["Adidix"]));
+
     villes.push(new Villes(Villers,["Tintin1712"]));
     villes.push(new Villes(Nassau,["Glommery"]));
     villes.push(new Villes(Helios,["LeftForDeath6"]));
     villes.push(new Villes(Inpou,["Gorderok", "Zzheyd"]));
-
-    villes.push(new Villes(Blackbay,["Arcks21"]));
     villes.push(new Villes(Almeria,["Gorderok", "Zzheyd"]));
+
     villes.push(new Villes(Kotaiblis,["Xof__"]));
-    villes.push(new Villes(Highland,["MissDu39","Kimalo"]));
-    villes.push(new Villes(Alorah,["Gorderok", "Zzheyd"]));
     villes.push(new Villes(Imynda,["Djox79"]));
+    villes.push(new Villes(Highland,["MissDu39","Kimalo"]));
+
+    villes.push(new Villes(Alorah,["Gorderok", "Zzheyd"]));
+    villes.push(new Villes(Blackbay,["Arcks21"]));
 
     villes.push(new Villes(Pas2Ville,["Pas2Maire"]));
     /**
@@ -381,6 +382,10 @@
     pnjs.push(new Pnj(31,"Roger","x=-2656,y=100,z=-8173",getVille(Florenia)))
     pnjs.push(new Pnj(32,"Kuliens","x=-13456,y=106,z=6968",getVille(Azuria)))
     pnjs.push(new Pnj(33,"Zarus","x=-13510,y=133,z=7108",getVille(Azuria)))
+    pnjs.push(new Pnj(34,"Pom Y Mai","x=9187,y=69,z=2395",getVille(Nakaram)))
+    pnjs.push(new Pnj(35,"Isildur","x=9099,y=67,z=2332",getVille(Nakaram)))
+    pnjs.push(new Pnj(36,"Amai","x=9639,y=66,z=2648",getVille(Nakaram)))
+    pnjs.push(new Pnj(37,"Hubert","x=9506,y=70,z=2375",getVille(Nakaram)))
 
 
     pnjs.push(new Pnj(42,"Plus la","Absente",getVille(Pas2Ville)))
@@ -628,6 +633,29 @@
     decos.push(createDeco("Cacao", getPnj(32),"5 blocs d'émeraude","","oui",["tete deco","bocal"]));
     decos.push(createDeco("Canelle", getPnj(32),"5 blocs d'émeraude","","oui",["tete deco","bocal"]));
     decos.push(createDeco("Plan de construction", getPnj(33),"5 bloc d'émeraude","","oui",["maison","plan","construction"]));
+
+    decos.push(createDeco("Doudou Champinou rouge", getPnj(34),"64 champignon marron / 32 champignon rouge","","oui",["peluche"]));
+    decos.push(createDeco("Doudou Champinou brun", getPnj(34),"64 + 32 champignon marron","","oui",["peluche"]));
+    decos.push(createDeco("Doudou Champinou carmin", getPnj(34),"64 champignon marron / 32 champignon carmin","","oui",["peluche"]));
+    decos.push(createDeco("Doudou Champinou biscornue", getPnj(34),"64 champignon marron / 32 champignon biscornu","","oui",["peluche"]));
+    decos.push(createDeco("Doudou Mini-champi rouge", getPnj(34),"64 champignon marron / 32 champignon rouge","","oui",["peluche"]));
+    decos.push(createDeco("Doudou Mini-champi brun", getPnj(34),"64 + 32 champignon marron","","oui",["peluche"]));
+    decos.push(createDeco("Doudou Mini-champi carmin", getPnj(34),"64 champignon marron / 32 champignon carmin","","oui",["peluche"]));
+    decos.push(createDeco("Doudou Mini-champibiscornue", getPnj(34),"64 champignon marron / 32 champignon biscornu","","oui",["peluche"]));
+    decos.push(createDeco("Doudou Scorp slime", getPnj(34),"16 bloc de slime / Doudou Mini-champi rouge","","oui",["peluche"]));
+
+
+    decos.push(createDeco("Oeuf a la coque", getPnj(35),"5 blocs d'émeraude","","oui",["tete deco"]));
+    decos.push(createDeco("Jambon 2", getPnj(35),"5 blocs d'émeraude","","oui",["tete deco"]));
+    decos.push(createDeco("Verre vide", getPnj(35),"5 blocs d'émeraude","","oui",["tete deco"]));
+    decos.push(createDeco("Verre d eau", getPnj(35),"5 blocs d'émeraude","","oui",["tete deco"]));
+    decos.push(createDeco("Verre de thé", getPnj(35),"5 blocs d'émeraude","","oui",["tete deco"]));
+    decos.push(createDeco("Verre de lait", getPnj(35),"5 blocs d'émeraude","","oui",["tete deco"]));
+
+    decos.push(createDeco("Chapeau tortue", getPnj(36),"32 ecailles de tortues / casque en cuir","","oui",["chapeau","tete","tortue"]));
+    decos.push(createDeco("Soupe de tortue", getPnj(36),"Tortue de Kemp de Nakaram / bol","","oui",["chapeau","tete","tortue","nourriture"]));
+    decos.push(createDeco("Cagette de tortue", getPnj(36),"3 Tortue de Kemp de Nakaram / cagette vide","","oui",["chapeau","tete","tortue","nourriture"]));
+    decos.push(createDeco("Plan de construction", getPnj(37),"5 bloc d'émeraude","","oui",["maison","plan","construction"]));
 
     /**
      * données decos
