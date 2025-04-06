@@ -19,13 +19,13 @@ class Search{
         return arr[t.length][s.length];
     };
     calculate = (a,b) => {
-        return levenshteinDistance(a.toLowerCase(),b.toLowerCase()) < 3;
+        return this.levenshteinDistance(a.toLowerCase(),b.toLowerCase()) < 3;
     }
 
     getPnjByName = (name) =>{
         let result = [];
         pnjs.forEach(pnj => {
-            if (calculate(name,pnj._name)){
+            if (this.calculate(name,pnj._name)){
                 if (!result.includes(pnj)){
                     result.push(pnj);
                 }
@@ -53,15 +53,15 @@ class Search{
     searchInVille = (recherche) => {
         let result = [];
         villes.forEach(city=> {
-
-            if (calculate(recherche,city._name)){
+            if (this.calculate(recherche,city._name)){
+                console.log(city._name)
                 if(!result.includes(city)){
                     result.push(city);
                 }
             }
 
             city._mayors.forEach(mayor => {
-                if (calculate(recherche,mayor)){
+                if (this.calculate(recherche,mayor)){
                     if(!result.includes(city)){
                         result.push(city);
                     }
@@ -69,7 +69,6 @@ class Search{
             })
 
         });
-
         return result;
     }
 
@@ -77,7 +76,7 @@ class Search{
         const result = []
         decos.forEach(deco => {
             deco.tags.forEach(tag=>{
-                if(calculate(recherche,tag))
+                if(this.calculate(recherche,tag))
                     if(!result.includes(deco))
                         result.push(deco);
             });
@@ -91,27 +90,27 @@ class Search{
         splitSearch.forEach(word=>{
 
             decos.forEach(deco =>{
-                if(calculate(word,deco._name)){
+                if(this.calculate(word,deco._name)){
                     if(!result.includes(deco))
                         result.push(deco);
                 }
             });
 
-            searchInVille(word).forEach(ville=>{
-                getDecoInVille(ville,decos).forEach(deco => {
+            this.searchInVille(word).forEach(ville=>{
+                this.getDecoInVille(ville,decos).forEach(deco => {
                     if(!result.includes(deco))
                         result.push(deco);
                 });
             });
 
-            getPnjByName(word).forEach(pnj => {
-                getDecoInPnj(pnj).forEach(deco => {
+            this.getPnjByName(word).forEach(pnj => {
+                this.getDecoInPnj(pnj).forEach(deco => {
                     if(!result.includes(deco))
                         result.push(deco);
                 });
             });
 
-            searchInTags(word).forEach(deco=>{
+            this.searchInTags(word).forEach(deco=>{
                 if(!result.includes(deco))
                     result.push(deco);
             });
@@ -131,8 +130,8 @@ class Search{
     getDecoInVille = (ville, decos)=>{
         let result = [];
         decos.forEach(deco=>{
-            console.log(deco)
-            if(deco._pnj_id._ville_id._name === ville){
+            if(deco._pnj_id._ville_id._name === ville._name){
+
                 result.push(deco);
             }
         });

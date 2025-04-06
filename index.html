@@ -145,7 +145,7 @@
         const ville = deco._pnj_id._ville_id._name;
         const coordinates = deco._pnj_id._coordinates;
         const price = deco._price;
-        const craftable = deco._craftable === "oui" ? "Achetable" : "Non-achetables"
+        const craftable = deco._craftable === "oui" && (deco._pnj_id._ville_id._name !== Pas2Ville) ? "Achetable" : "Non-achetables"
 
         let divMD4 = document.createElement('div');
         divMD4.className = "col-md-2";
