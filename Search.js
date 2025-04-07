@@ -23,16 +23,30 @@ class Search{
     }
 
     getPnjByName = (name) =>{
+
         let result = [];
+        //pour les nom de pnjs en 2 mots
         pnjs.forEach(pnj => {
+            const splitPnjName = pnj._name.split(" ");
+            splitPnjName.forEach(pnjName => {
+                if(this.calculate(name,pnjName)){
+                    if (!result.includes(pnj)){
+                        result.push(pnj);
+                    }
+                }
+            });
+
+            // pour les nom de pnj en une fois
             if (this.calculate(name,pnj._name)){
                 if (!result.includes(pnj)){
                     result.push(pnj);
                 }
             }
+
         });
         return result;
     }
+
     getDecoInPnj = (pnj)=>{
         let result = [];
         decos.forEach(deco=>{
@@ -89,7 +103,19 @@ class Search{
 
         splitSearch.forEach(word=>{
 
+
             decos.forEach(deco =>{
+
+                const splitDecoName = deco._name;
+                // pour les decos en deux mots, ca prends chaque mot tout seul
+                splitDecoName.split(" ").forEach(name => {
+                    if(this.calculate(word,splitDecoName)){
+                        if(!result.includes(deco))
+                            result.push(deco);
+                    }
+                });
+
+                // pour les nom de decos en une fois
                 if(this.calculate(word,deco._name)){
                     if(!result.includes(deco))
                         result.push(deco);
