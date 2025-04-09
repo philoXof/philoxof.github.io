@@ -22,6 +22,64 @@ class Search{
         return this.levenshteinDistance(a.toLowerCase(),b.toLowerCase()) < 3;
     }
 
+    /**
+     *
+     * @param recherche = contenu de l'entrée utilisateur
+     * @returns liste de deco qui correspondent a la recherche
+     */
+    searchDeco = (recherche) =>{
+        let result = [];
+        const splitSearch = recherche.split(" ");
+
+        splitSearch.forEach(word=>{
+
+
+            decos.forEach(deco =>{
+
+                const splitDecoName = deco._name.split(" ");
+                // pour les decos en deux mots, ca prends chaque mot tout seul
+                splitDecoName.forEach(name => {
+                    if(this.calculate(word,splitDecoName)){
+                        if(!result.includes(deco))
+                            result.push(deco);
+                    }
+                });
+
+                // pour les nom de decos en une fois
+                if(this.calculate(word,deco._name)){
+                    if(!result.includes(deco))
+                        result.push(deco);
+                }
+            });
+
+            this.searchInVille(word).forEach(ville=>{
+                this.getDecoInVille(ville,decos).forEach(deco => {
+                    if(!result.includes(deco))
+                        result.push(deco);
+                });
+            });
+
+            this.getPnjByName(word).forEach(pnj => {
+
+                const splitPnjName = pnj._name.split(" ");
+
+                this.getDecoInPnj(pnj).forEach(deco => {
+                    if(!result.includes(deco))
+                        result.push(deco);
+                });
+
+            });
+
+            this.searchInTags(word).forEach(deco=>{
+                if(!result.includes(deco))
+                    result.push(deco);
+            });
+
+        });
+        return result;
+    }
+
+
     getPnjByName = (name) =>{
 
         let result = [];
@@ -47,6 +105,11 @@ class Search{
         return result;
     }
 
+    /**
+     *
+     * @param pnj =
+     * @returns {*[]}
+     */
     getDecoInPnj = (pnj)=>{
         let result = [];
         decos.forEach(deco=>{
@@ -60,7 +123,7 @@ class Search{
     /**
      *
      * @param recherche = contenue de l'entrée utilisateur
-     * @returns {*[deco(id, name, [pnj_id], image, price, event, craftable, [tags])]}
+     * @returns result tableau de ville qui correspondent a la recherche (via le nom de la ville ou des maires)
      * ca retourne les decos, base sur le mot de recherche en condition qu il soit conforme avec le nom des maires ou de la ville
      *
      */
@@ -97,53 +160,7 @@ class Search{
         });
         return result;
     }
-    searchDeco = (recherche) =>{
-        let result = [];
-        const splitSearch = recherche.split(" ");
 
-        splitSearch.forEach(word=>{
-
-
-            decos.forEach(deco =>{
-
-                const splitDecoName = deco._name;
-                // pour les decos en deux mots, ca prends chaque mot tout seul
-                splitDecoName.split(" ").forEach(name => {
-                    if(this.calculate(word,splitDecoName)){
-                        if(!result.includes(deco))
-                            result.push(deco);
-                    }
-                });
-
-                // pour les nom de decos en une fois
-                if(this.calculate(word,deco._name)){
-                    if(!result.includes(deco))
-                        result.push(deco);
-                }
-            });
-
-            this.searchInVille(word).forEach(ville=>{
-                this.getDecoInVille(ville,decos).forEach(deco => {
-                    if(!result.includes(deco))
-                        result.push(deco);
-                });
-            });
-
-            this.getPnjByName(word).forEach(pnj => {
-                this.getDecoInPnj(pnj).forEach(deco => {
-                    if(!result.includes(deco))
-                        result.push(deco);
-                });
-            });
-
-            this.searchInTags(word).forEach(deco=>{
-                if(!result.includes(deco))
-                    result.push(deco);
-            });
-
-        });
-        return result;
-    }
     getVille = (name)=>{
         let result;
         villes.forEach(ville=> {
