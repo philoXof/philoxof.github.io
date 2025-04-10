@@ -243,84 +243,88 @@ class Decos extends Deco{
         decos.push(this.CreateDeco("Loup", objPnjs.getPnjById(22),"5 bloc d'émeraude","","oui",["tete", "deco","bois"]));
         decos.push(this.CreateDeco("Belier", objPnjs.getPnjById(22),"5 bloc d'émeraude","","oui",["tete", "deco","bois"]));
 
-        decos.push(this.CreateDeco("Tonneau 1", objPnjs.getPnjById(22),"5 bloc d'émeraude","","oui",["tete", "deco","bois"]));
-        decos.push(this.CreateDeco("Tonneau 2", objPnjs.getPnjById(22),"5 bloc d'émeraude","","oui",["tete", "deco","bois"]));
-        decos.push(this.CreateDeco("Baril 1", objPnjs.getPnjById(22),"5 bloc d'émeraude","","oui",["tete", "deco","bois"]));
-        decos.push(this.CreateDeco("Baril 2", objPnjs.getPnjById(22),"5 bloc d'émeraude","","oui",["tete", "deco","bois"]));
-        decos.push(this.CreateDeco("Plan de construction", objPnjs.getPnjById(22),"5 bloc d'émeraude","","oui",["maison","plan","construction"]));
+        decos.push(this.CreateDeco("Tonneau 1", objPnjs.getPnjById(23),"5 bloc d'émeraude","","oui",["tete", "deco","bois"]));
+        decos.push(this.CreateDeco("Tonneau 2", objPnjs.getPnjById(23),"5 bloc d'émeraude","","oui",["tete", "deco","bois"]));
+        decos.push(this.CreateDeco("Baril 1", objPnjs.getPnjById(23),"5 bloc d'émeraude","","oui",["tete", "deco","bois"]));
+        decos.push(this.CreateDeco("Baril 2", objPnjs.getPnjById(23),"5 bloc d'émeraude","","oui",["tete", "deco","bois"]));
+
+
 
         decos.push(this.CreateDeco("Plan de construction", objPnjs.getPnjById(24),"5 bloc d'émeraude","","oui",["maison","plan","construction"]));
 
-        decos.push(this.CreateDeco("Jambon", objPnjs.getPnjById(25),"5 bloc d'émeraude","","oui",["tete", "deco","nourriture","viande"]));
-        decos.push(this.CreateDeco("Jambon à os", objPnjs.getPnjById(25),"5 bloc d'émeraude","","oui",["tete", "deco","nourriture","viande"]));
-        decos.push(this.CreateDeco("Jambon à os aux herbes", objPnjs.getPnjById(25),"5 bloc d'émeraude","","oui",["tete", "deco","nourriture","viande"]));
-        decos.push(this.CreateDeco("Bacon", objPnjs.getPnjById(25),"5 bloc d'émeraude","","oui",["tete", "deco","nourriture","viande"]));
-        decos.push(this.CreateDeco("Viande", objPnjs.getPnjById(25),"5 bloc d'émeraude","","oui",["tete", "deco","nourriture","viande"]));
+        decos.push(this.CreateDeco("Jambon", objPnjs.getPnjById(27),"5 bloc d'émeraude","","oui",["tete", "deco","nourriture","viande"]));
+        decos.push(this.CreateDeco("Jambon à os", objPnjs.getPnjById(27),"5 bloc d'émeraude","","oui",["tete", "deco","nourriture","viande"]));
+        decos.push(this.CreateDeco("Jambon à os aux herbes", objPnjs.getPnjById(27),"5 bloc d'émeraude","","oui",["tete", "deco","nourriture","viande"]));
+        decos.push(this.CreateDeco("Bacon", objPnjs.getPnjById(27),"5 bloc d'émeraude","","oui",["tete", "deco","nourriture","viande"]));
+        decos.push(this.CreateDeco("Viande", objPnjs.getPnjById(27),"5 bloc d'émeraude","","oui",["tete", "deco","nourriture","viande"]));
 
-        decos.push(this.CreateDeco("Torche en fer forgé", objPnjs.getPnjById(26),"3 bloc de fer brut / 1 torche","","oui",["lumiere"]));
-        decos.push(this.CreateDeco("Torche en fer forgé mural", objPnjs.getPnjById(26),"3 bloc de fer brut / 1 torche","","oui",["lumiere"]));
+        decos.push(this.CreateDeco("Torche en fer forgé", objPnjs.getPnjById(27),"3 bloc de fer brut / 1 torche","","oui",["lumiere"]));
+        decos.push(this.CreateDeco("Torche en fer forgé mural", objPnjs.getPnjById(27),"3 bloc de fer brut / 1 torche","","oui",["lumiere"]));
 
-        decos.push(this.CreateDeco("Cible", objPnjs.getPnjById(27),"5 blocs d'émeraude","","oui",["tete", "deco"]));
-        decos.push(this.CreateDeco("Bougie rouge", objPnjs.getPnjById(27),"5 blocs d'émeraude","","oui",["tete", "deco"]));
-        decos.push(this.CreateDeco("Coffre", objPnjs.getPnjById(27),"5 blocs d'émeraude","","oui",["tete", "deco"]));
-        decos.push(this.CreateDeco("Globe terrestre", objPnjs.getPnjById(27),"5 blocs d'émeraude","","oui",["tete", "deco"]));
-        decos.push(this.CreateDeco("Sceau", objPnjs.getPnjById(27),"5 blocs d'émeraude","","oui",["tete", "deco"]));
-        decos.push(this.CreateDeco("Vieux livres", objPnjs.getPnjById(27),"5 blocs d'émeraude","","oui",["tete", "deco"]));
-        decos.push(this.CreateDeco("Coffre royal", objPnjs.getPnjById(27),"5 blocs d'émeraude","","oui",["tete", "deco"]));
-        decos.push(this.CreateDeco("Sac d or", objPnjs.getPnjById(27),"5 blocs d'émeraude","","oui",["tete", "deco"]));
+        decos.push(this.CreateDeco("Cible", objPnjs.getPnjById(28),"5 blocs d'émeraude","","oui",["tete", "deco"]));
+        decos.push(this.CreateDeco("Bougie rouge", objPnjs.getPnjById(28),"5 blocs d'émeraude","","oui",["tete", "deco"]));
+        decos.push(this.CreateDeco("Coffre", objPnjs.getPnjById(28),"5 blocs d'émeraude","","oui",["tete", "deco"]));
+        decos.push(this.CreateDeco("Globe terrestre", objPnjs.getPnjById(28),"5 blocs d'émeraude","","oui",["tete", "deco"]));
+        decos.push(this.CreateDeco("Sceau", objPnjs.getPnjById(28),"5 blocs d'émeraude","","oui",["tete", "deco"]));
+        decos.push(this.CreateDeco("Vieux livres", objPnjs.getPnjById(28),"5 blocs d'émeraude","","oui",["tete", "deco"]));
+        decos.push(this.CreateDeco("Coffre royal", objPnjs.getPnjById(28),"5 blocs d'émeraude","","oui",["tete", "deco"]));
+        decos.push(this.CreateDeco("Sac d or", objPnjs.getPnjById(28),"5 blocs d'émeraude","","oui",["tete", "deco"]));
 
-        decos.push(this.CreateDeco("Perroquet Rouge", objPnjs.getPnjById(28),"5 blocs d'émeraude","","oui",["tete", "deco","animal"]));
-        decos.push(this.CreateDeco("Perroquet vert", objPnjs.getPnjById(28),"5 blocs d'émeraude","","oui",["tete", "deco","animal"]));
-        decos.push(this.CreateDeco("Perroquet jaune", objPnjs.getPnjById(28),"5 blocs d'émeraude","","oui",["tete", "deco","animal"]));
-        decos.push(this.CreateDeco("Perroquet orange", objPnjs.getPnjById(28),"5 blocs d'émeraude","","oui",["tete", "deco","animal"]));
-        decos.push(this.CreateDeco("Perroquet bleu", objPnjs.getPnjById(28),"5 blocs d'émeraude","","oui",["tete", "deco","animal"]));
+        decos.push(this.CreateDeco("Perroquet Rouge", objPnjs.getPnjById(29),"5 blocs d'émeraude","","oui",["tete", "deco","animal"]));
+        decos.push(this.CreateDeco("Perroquet vert", objPnjs.getPnjById(29),"5 blocs d'émeraude","","oui",["tete", "deco","animal"]));
+        decos.push(this.CreateDeco("Perroquet jaune", objPnjs.getPnjById(29),"5 blocs d'émeraude","","oui",["tete", "deco","animal"]));
+        decos.push(this.CreateDeco("Perroquet orange", objPnjs.getPnjById(29),"5 blocs d'émeraude","","oui",["tete", "deco","animal"]));
+        decos.push(this.CreateDeco("Perroquet bleu", objPnjs.getPnjById(29),"5 blocs d'émeraude","","oui",["tete", "deco","animal"]));
 
-        decos.push(this.CreateDeco("Arbuste violet", objPnjs.getPnjById(29),"5 blocs d'émeraude","","oui",["tete", "deco","fleurs"]));
-        decos.push(this.CreateDeco("Arbuste rosé", objPnjs.getPnjById(29),"5 blocs d'émeraude","","oui",["tete", "deco","fleurs"]));
-        decos.push(this.CreateDeco("Arbuste bordeaux", objPnjs.getPnjById(29),"5 blocs d'émeraude","","oui",["tete", "deco","fleurs"]));
-        decos.push(this.CreateDeco("Arbuste rose", objPnjs.getPnjById(29),"5 blocs d'émeraude","","oui",["tete", "deco","fleurs"]));
-        decos.push(this.CreateDeco("Arbuste marguerite", objPnjs.getPnjById(29),"5 blocs d'émeraude","","oui",["tete", "deco","fleurs"]));
-        decos.push(this.CreateDeco("Arbuste rouge", objPnjs.getPnjById(29),"5 blocs d'émeraude","","oui",["tete", "deco","fleurs"]));
-        decos.push(this.CreateDeco("Arbuste blanc", objPnjs.getPnjById(29),"5 blocs d'émeraude","","oui",["tete", "deco","fleurs"]));
-        decos.push(this.CreateDeco("Arbuste bleu", objPnjs.getPnjById(29),"5 blocs d'émeraude","","oui",["tete", "deco","fleurs"]));
+        decos.push(this.CreateDeco("Arbuste violet", objPnjs.getPnjById(30),"5 blocs d'émeraude","","oui",["tete", "deco","fleurs"]));
+        decos.push(this.CreateDeco("Arbuste rosé", objPnjs.getPnjById(30),"5 blocs d'émeraude","","oui",["tete", "deco","fleurs"]));
+        decos.push(this.CreateDeco("Arbuste bordeaux", objPnjs.getPnjById(30),"5 blocs d'émeraude","","oui",["tete", "deco","fleurs"]));
+        decos.push(this.CreateDeco("Arbuste rose", objPnjs.getPnjById(30),"5 blocs d'émeraude","","oui",["tete", "deco","fleurs"]));
+        decos.push(this.CreateDeco("Arbuste marguerite", objPnjs.getPnjById(30),"5 blocs d'émeraude","","oui",["tete", "deco","fleurs"]));
+        decos.push(this.CreateDeco("Arbuste rouge", objPnjs.getPnjById(30),"5 blocs d'émeraude","","oui",["tete", "deco","fleurs"]));
+        decos.push(this.CreateDeco("Arbuste blanc", objPnjs.getPnjById(30),"5 blocs d'émeraude","","oui",["tete", "deco","fleurs"]));
+        decos.push(this.CreateDeco("Arbuste bleu", objPnjs.getPnjById(30),"5 blocs d'émeraude","","oui",["tete", "deco","fleurs"]));
 
-        decos.push(this.CreateDeco("Cagette de Truites fleurie", objPnjs.getPnjById(30),"3 truite fleurie / cagette vide","","oui",["tete", "deco","poissons"]));
-        decos.push(this.CreateDeco("Truites fleuries suspendues", objPnjs.getPnjById(30),"4 truite fleurie / 16 ficelles","","oui",["tete", "deco","poissons"]));
-        decos.push(this.CreateDeco("Jus de fruit", objPnjs.getPnjById(31),"5 blocs d'émeraude","","oui",["tete", "deco","boisson"]));
-        decos.push(this.CreateDeco("Biere", objPnjs.getPnjById(31),"5 blocs d'émeraude","","oui",["tete", "deco","boisson","alcool"]));
+        decos.push(this.CreateDeco("Cagette de Truites fleurie", objPnjs.getPnjById(31),"3 truite fleurie / cagette vide","","oui",["tete", "deco","poissons"]));
+        decos.push(this.CreateDeco("Truites fleuries suspendues", objPnjs.getPnjById(31),"4 truite fleurie / 16 ficelles","","oui",["tete", "deco","poissons"]));
 
-        decos.push(this.CreateDeco("Oignon en poudre", objPnjs.getPnjById(32),"5 blocs d'émeraude","","oui",["tete", "deco","bocal"]));
-        decos.push(this.CreateDeco("Noix de muscade", objPnjs.getPnjById(32),"5 blocs d'émeraude","","oui",["tete", "deco","bocal"]));
-        decos.push(this.CreateDeco("Graine de moutarde", objPnjs.getPnjById(32),"5 blocs d'émeraude","","oui",["tete", "deco","bocal"]));
-        decos.push(this.CreateDeco("Gingembre", objPnjs.getPnjById(32),"5 blocs d'émeraude","","oui",["tete", "deco","bocal"]));
-        decos.push(this.CreateDeco("Aneth", objPnjs.getPnjById(32),"5 blocs d'émeraude","","oui",["tete", "deco","bocal"]));
-        decos.push(this.CreateDeco("Curry", objPnjs.getPnjById(32),"5 blocs d'émeraude","","oui",["tete", "deco","bocal"]));
-        decos.push(this.CreateDeco("Cacao", objPnjs.getPnjById(32),"5 blocs d'émeraude","","oui",["tete", "deco","bocal"]));
-        decos.push(this.CreateDeco("Canelle", objPnjs.getPnjById(32),"5 blocs d'émeraude","","oui",["tete", "deco","bocal"]));
-        decos.push(this.CreateDeco("Plan de construction", objPnjs.getPnjById(33),"5 bloc d'émeraude","","oui",["maison","plan","construction"]));
+        decos.push(this.CreateDeco("Jus de fruit", objPnjs.getPnjById(32),"5 blocs d'émeraude","","oui",["tete", "deco","boisson"]));
+        decos.push(this.CreateDeco("Biere", objPnjs.getPnjById(32),"5 blocs d'émeraude","","oui",["tete", "deco","boisson","alcool"]));
 
-        decos.push(this.CreateDeco("Doudou Champinou rouge", objPnjs.getPnjById(34),"64 champignon marron / 32 champignon rouge","","oui",["peluche"]));
-        decos.push(this.CreateDeco("Doudou Champinou brun", objPnjs.getPnjById(34),"64 + 32 champignon marron","","oui",["peluche"]));
-        decos.push(this.CreateDeco("Doudou Champinou carmin", objPnjs.getPnjById(34),"64 champignon marron / 32 champignon carmin","","oui",["peluche"]));
-        decos.push(this.CreateDeco("Doudou Champinou biscornue", objPnjs.getPnjById(34),"64 champignon marron / 32 champignon biscornu","","oui",["peluche"]));
-        decos.push(this.CreateDeco("Doudou Mini-champi rouge", objPnjs.getPnjById(34),"64 champignon marron / 32 champignon rouge","","oui",["peluche"]));
-        decos.push(this.CreateDeco("Doudou Mini-champi brun", objPnjs.getPnjById(34),"64 + 32 champignon marron","","oui",["peluche"]));
-        decos.push(this.CreateDeco("Doudou Mini-champi carmin", objPnjs.getPnjById(34),"64 champignon marron / 32 champignon carmin","","oui",["peluche"]));
-        decos.push(this.CreateDeco("Doudou Mini-champibiscornue", objPnjs.getPnjById(34),"64 champignon marron / 32 champignon biscornu","","oui",["peluche"]));
-        decos.push(this.CreateDeco("Doudou Scorp slime", objPnjs.getPnjById(34),"16 bloc de slime / Doudou Mini-champi rouge","","oui",["peluche"]));
+        decos.push(this.CreateDeco("Oignon en poudre", objPnjs.getPnjById(33),"5 blocs d'émeraude","","oui",["tete", "deco","bocal"]));
+        decos.push(this.CreateDeco("Noix de muscade", objPnjs.getPnjById(33),"5 blocs d'émeraude","","oui",["tete", "deco","bocal"]));
+        decos.push(this.CreateDeco("Graine de moutarde", objPnjs.getPnjById(33),"5 blocs d'émeraude","","oui",["tete", "deco","bocal"]));
+        decos.push(this.CreateDeco("Gingembre", objPnjs.getPnjById(33),"5 blocs d'émeraude","","oui",["tete", "deco","bocal"]));
+        decos.push(this.CreateDeco("Aneth", objPnjs.getPnjById(33),"5 blocs d'émeraude","","oui",["tete", "deco","bocal"]));
+        decos.push(this.CreateDeco("Curry", objPnjs.getPnjById(33),"5 blocs d'émeraude","","oui",["tete", "deco","bocal"]));
+        decos.push(this.CreateDeco("Cacao", objPnjs.getPnjById(33),"5 blocs d'émeraude","","oui",["tete", "deco","bocal"]));
+        decos.push(this.CreateDeco("Canelle", objPnjs.getPnjById(33),"5 blocs d'émeraude","","oui",["tete", "deco","bocal"]));
+
+        decos.push(this.CreateDeco("Plan de construction", objPnjs.getPnjById(34),"5 bloc d'émeraude","","oui",["maison","plan","construction"]));
+
+        decos.push(this.CreateDeco("Doudou Champinou rouge", objPnjs.getPnjById(35),"64 champignon marron / 32 champignon rouge","","oui",["peluche"]));
+        decos.push(this.CreateDeco("Doudou Champinou brun", objPnjs.getPnjById(35),"64 + 32 champignon marron","","oui",["peluche"]));
+        decos.push(this.CreateDeco("Doudou Champinou carmin", objPnjs.getPnjById(35),"64 champignon marron / 32 champignon carmin","","oui",["peluche"]));
+        decos.push(this.CreateDeco("Doudou Champinou biscornue", objPnjs.getPnjById(35),"64 champignon marron / 32 champignon biscornu","","oui",["peluche"]));
+        decos.push(this.CreateDeco("Doudou Mini-champi rouge", objPnjs.getPnjById(35),"64 champignon marron / 32 champignon rouge","","oui",["peluche"]));
+        decos.push(this.CreateDeco("Doudou Mini-champi brun", objPnjs.getPnjById(35),"64 + 32 champignon marron","","oui",["peluche"]));
+        decos.push(this.CreateDeco("Doudou Mini-champi carmin", objPnjs.getPnjById(35),"64 champignon marron / 32 champignon carmin","","oui",["peluche"]));
+        decos.push(this.CreateDeco("Doudou Mini-champibiscornue", objPnjs.getPnjById(35),"64 champignon marron / 32 champignon biscornu","","oui",["peluche"]));
+        decos.push(this.CreateDeco("Doudou Scorp slime", objPnjs.getPnjById(35),"16 bloc de slime / Doudou Mini-champi rouge","","oui",["peluche"]));
 
 
-        decos.push(this.CreateDeco("Oeuf a la coque", objPnjs.getPnjById(35),"5 blocs d'émeraude","","oui",["tete", "deco"]));
-        decos.push(this.CreateDeco("Jambon 2", objPnjs.getPnjById(35),"5 blocs d'émeraude","","oui",["tete", "deco"]));
-        decos.push(this.CreateDeco("Verre vide", objPnjs.getPnjById(35),"5 blocs d'émeraude","","oui",["tete", "deco"]));
-        decos.push(this.CreateDeco("Verre d eau", objPnjs.getPnjById(35),"5 blocs d'émeraude","","oui",["tete", "deco"]));
-        decos.push(this.CreateDeco("Verre de thé", objPnjs.getPnjById(35),"5 blocs d'émeraude","","oui",["tete", "deco"]));
-        decos.push(this.CreateDeco("Verre de lait", objPnjs.getPnjById(35),"5 blocs d'émeraude","","oui",["tete", "deco"]));
+        decos.push(this.CreateDeco("Oeuf a la coque", objPnjs.getPnjById(36),"5 blocs d'émeraude","","oui",["tete", "deco"]));
+        decos.push(this.CreateDeco("Jambon 2", objPnjs.getPnjById(36),"5 blocs d'émeraude","","oui",["tete", "deco"]));
+        decos.push(this.CreateDeco("Verre vide", objPnjs.getPnjById(36),"5 blocs d'émeraude","","oui",["tete", "deco"]));
+        decos.push(this.CreateDeco("Verre d eau", objPnjs.getPnjById(36),"5 blocs d'émeraude","","oui",["tete", "deco"]));
+        decos.push(this.CreateDeco("Verre de thé", objPnjs.getPnjById(36),"5 blocs d'émeraude","","oui",["tete", "deco"]));
+        decos.push(this.CreateDeco("Verre de lait", objPnjs.getPnjById(36),"5 blocs d'émeraude","","oui",["tete", "deco"]));
 
-        decos.push(this.CreateDeco("Chapeau tortue", objPnjs.getPnjById(36),"32 ecailles de tortues / casque en cuir","","oui",["chapeau","tete","tortue"]));
-        decos.push(this.CreateDeco("Soupe de tortue", objPnjs.getPnjById(36),"Tortue de Kemp de Nakaram / bol","","oui",["chapeau","tete","tortue","nourriture"]));
-        decos.push(this.CreateDeco("Cagette de tortue", objPnjs.getPnjById(36),"3 Tortue de Kemp de Nakaram / cagette vide","","oui",["chapeau","tete","tortue","nourriture"]));
-        decos.push(this.CreateDeco("Plan de construction", objPnjs.getPnjById(37),"5 bloc d'émeraude","","oui",["maison","plan","construction"]));
+        decos.push(this.CreateDeco("Chapeau tortue", objPnjs.getPnjById(37),"32 ecailles de tortues / casque en cuir","","oui",["chapeau","tete","tortue"]));
+        decos.push(this.CreateDeco("Soupe de tortue", objPnjs.getPnjById(37),"Tortue de Kemp de Nakaram / bol","","oui",["chapeau","tete","tortue","nourriture"]));
+        decos.push(this.CreateDeco("Cagette de tortue", objPnjs.getPnjById(37),"3 Tortue de Kemp de Nakaram / cagette vide","","oui",["chapeau","tete","tortue","nourriture"]));
+
+        decos.push(this.CreateDeco("Plan de construction", objPnjs.getPnjById(38),"5 bloc d'émeraude","","oui",["maison","plan","construction"]));
 
         /**
          * données decos

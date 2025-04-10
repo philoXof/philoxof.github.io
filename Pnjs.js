@@ -64,37 +64,37 @@ class Pnjs extends Pnj{
         pnjs.push(new Pnj(21,"Milchou","x=-8540,y=72,z=12742",villes.getVilleByName(Drakaina)))
         pnjs.push(new Pnj(22,"Gunnvor","x=-8546,y=72,z=12754",villes.getVilleByName(Drakaina)))
         pnjs.push(new Pnj(23,"Finnbjorn","x=-8546,y=72,z=12754",villes.getVilleByName(Drakaina)))
-        pnjs.push(new Pnj(23,"Asulf","x=-8538,y=76,z=12803",villes.getVilleByName(Drakaina)))//todo l id
+        pnjs.push(new Pnj(25,"Asulf","x=-8538,y=76,z=12803",villes.getVilleByName(Drakaina)))
 
         /**
          * Rome
          **/
-        pnjs.push(new Pnj(24,"Quartus","x=-18187,y=68,z=-3392",villes.getVilleByName(Rome)))
-        pnjs.push(new Pnj(25,"Junius","x=-18253,y=69,z=-3330",villes.getVilleByName(Rome)))
-        pnjs.push(new Pnj(26,"Faberien","x=-18248,y=68,z=-3371",villes.getVilleByName(Rome)))
-        pnjs.push(new Pnj(27,"Decimus","x=-18679,y=79,z=-3221",villes.getVilleByName(Rome)))
+        //pnjs.push(new Pnj(26,"Quartus","x=-18187,y=68,z=-3392",villes.getVilleByName(Rome)))
+        pnjs.push(new Pnj(26,"Junius","x=-18253,y=69,z=-3330",villes.getVilleByName(Rome)))
+        pnjs.push(new Pnj(27,"Faberien","x=-18248,y=68,z=-3371",villes.getVilleByName(Rome)))
+        pnjs.push(new Pnj(28,"Decimus","x=-18679,y=79,z=-3221",villes.getVilleByName(Rome)))
 
         /**
          * Florenia
          **/
-        pnjs.push(new Pnj(28,"Kiwix","x=-2502,y=97,z=-8151",villes.getVilleByName(Florenia)))
-        pnjs.push(new Pnj(29,"Marcel","x=-2502,y=97,z=-8151",villes.getVilleByName(Florenia)))
-        pnjs.push(new Pnj(30,"Soiduront","x=-2502,y=97,z=-8151",villes.getVilleByName(Florenia)))
-        pnjs.push(new Pnj(31,"Roger","x=-2656,y=100,z=-8173",villes.getVilleByName(Florenia)))
+        pnjs.push(new Pnj(29,"Kiwix","x=-2501,y=97,z=-8151",villes.getVilleByName(Florenia)))
+        pnjs.push(new Pnj(30,"Marcel","x=-2507,y=97,z=-8151",villes.getVilleByName(Florenia)))
+        pnjs.push(new Pnj(31,"Soiduront","x=-2625,y=98,z=-8101",villes.getVilleByName(Florenia)))
+        pnjs.push(new Pnj(32,"Roger","x=-2656,y=100,z=-8173",villes.getVilleByName(Florenia)))
 
         /**
          * Azuria
          **/
-        pnjs.push(new Pnj(32,"Kuliens","x=-13456,y=106,z=6968",villes.getVilleByName(Azuria)))
-        pnjs.push(new Pnj(33,"Zarus","x=-13510,y=133,z=7108",villes.getVilleByName(Azuria)))
+        pnjs.push(new Pnj(33,"Kuliens","x=-13456,y=106,z=6968",villes.getVilleByName(Azuria)))
+        pnjs.push(new Pnj(34,"Zarus","x=-13510,y=133,z=7108",villes.getVilleByName(Azuria)))
 
         /**
          * Nakaram
          **/
-        pnjs.push(new Pnj(34,"Pom Y Mai","x=9187,y=69,z=2395",villes.getVilleByName(Nakaram)))
-        pnjs.push(new Pnj(35,"Isildur","x=9099,y=67,z=2332",villes.getVilleByName(Nakaram)))
-        pnjs.push(new Pnj(36,"Amai","x=9639,y=66,z=2648",villes.getVilleByName(Nakaram)))
-        pnjs.push(new Pnj(37,"Hubert","x=9506,y=70,z=2375",villes.getVilleByName(Nakaram)))
+        pnjs.push(new Pnj(35,"Pom Y Mai","x=9187,y=69,z=2395",villes.getVilleByName(Nakaram)))
+        pnjs.push(new Pnj(36,"Isildur","x=9099,y=67,z=2332",villes.getVilleByName(Nakaram)))
+        pnjs.push(new Pnj(37,"Amai","x=9639,y=66,z=2648",villes.getVilleByName(Nakaram)))
+        pnjs.push(new Pnj(38,"Hubert","x=9506,y=70,z=2375",villes.getVilleByName(Nakaram)))
 
 
         /**
