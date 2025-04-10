@@ -44,9 +44,11 @@ class Decos extends Deco{
     CreateDeco(name, pnj_id, price, event, craftable, tags){
         return new Deco(this.id++, name, pnj_id, "img/" + name + ".png" , price, event, craftable, tags);
     }
+    CreateDecoV2(name, pnj_id, price, event, craftable, tags){
+        return new Deco(this.id++, name, pnj_id, "img/" + pnj_id._ville_id._name + "/" + pnj_id._name + "/" + name + ".png" , price, event, craftable, tags);
+    }
 
     InitDecoData(objPnjs){
-        const {createDeco} = new Deco();
         const decos = [];
 
         /**
@@ -56,7 +58,9 @@ class Decos extends Deco{
         decos.push(this.CreateDeco("Tronc De Bambou", objPnjs.getPnjById(1),"5 blocs d'émeraude","","oui",["bambou","plante","tronc"]));
         decos.push(this.CreateDeco("Citrouille Japonaise", objPnjs.getPnjById(1),"5 blocs d'émeraude","","oui",["plante","citrouille","japonaise"]));
         decos.push(this.CreateDeco("Durian", objPnjs.getPnjById(1),"5 blocs d'émeraude","","oui",["plante"]));
+
         decos.push(this.CreateDeco("Plan de construction", objPnjs.getPnjById(2),"5 blocs d'émeraude","","oui",["maison","plan","construction"]));
+
         decos.push(this.CreateDeco("Bonsaï cerisier à fleurs", objPnjs.getPnjById(3),"vase + 64 poudres d'os","","oui",["plante","arbre","cerisier","bonsaï","fleurs"]));
         decos.push(this.CreateDeco("Bonsaï ancien", objPnjs.getPnjById(3),"vase + 64 poudres d'os","","oui",["plante","arbre","bonsaï","ancien"]));
         decos.push(this.CreateDeco("Sabot de vénus en pot", objPnjs.getPnjById(3),"vase + 64 poudres d'os","","oui",["plante","sabot","venus","pot"]));
@@ -65,6 +69,7 @@ class Decos extends Deco{
         decos.push(this.CreateDeco("Lilas en pot", objPnjs.getPnjById(3),"vase + 64 poudres d'os","","oui",["plante","fleur","pot","lilas"]));
         decos.push(this.CreateDeco("Schlumbergera en pot", objPnjs.getPnjById(3),"vase + 64 poudres d'os","","oui",["plante","fleur","pot","Schlumbergera"]));
         decos.push(this.CreateDeco("Cactus en pot", objPnjs.getPnjById(3),"vase + 64 poudres d'os","","oui",["plante","cactus"]));
+
         decos.push(this.CreateDeco("vase noir", objPnjs.getPnjById(5),"5 blocs d'émeraude","","oui",["noir", "vase"]));
         decos.push(this.CreateDeco("vase orange", objPnjs.getPnjById(5),"5 blocs d'émeraude","","oui",["orange", "vase"]));
         decos.push(this.CreateDeco("vase marron", objPnjs.getPnjById(5),"5 blocs d'émeraude","","oui",["marron", "vase"]));
@@ -73,6 +78,7 @@ class Decos extends Deco{
         decos.push(this.CreateDeco("vase blanc", objPnjs.getPnjById(5),"5 blocs d'émeraude","","oui",["blanc", "vase"]));
         decos.push(this.CreateDeco("vase bleu", objPnjs.getPnjById(5),"5 blocs d'émeraude","","oui",["bleu", "vase"]));
         decos.push(this.CreateDeco("vase vert", objPnjs.getPnjById(5),"5 blocs d'émeraude","","oui",["vert", "vase"]));
+
         decos.push(this.CreateDeco("Farine", objPnjs.getPnjById(6),"5 blocs d'émeraude","","oui",["ingredient"]));
         decos.push(this.CreateDeco("Pain", objPnjs.getPnjById(6),"5 blocs d'émeraude","","oui",["pain"]));
         decos.push(this.CreateDeco("Pain moisi", objPnjs.getPnjById(6),"5 blocs d'émeraude","","oui",["pain"]));
@@ -80,6 +86,7 @@ class Decos extends Deco{
         decos.push(this.CreateDeco("Pain de romarin", objPnjs.getPnjById(6),"5 blocs d'émeraude","","oui",["pain"]));
         decos.push(this.CreateDeco("Pain aux noix de raisin", objPnjs.getPnjById(6),"5 blocs d'émeraude","","oui",["pain"]));
         decos.push(this.CreateDeco("Pain au levain", objPnjs.getPnjById(6),"5 blocs d'émeraude","","oui",["pain"]));
+
         decos.push(this.CreateDeco("vase rose", objPnjs.getPnjById(7),"5 blocs d'émeraude","","oui",["rose", "vase"]));
         decos.push(this.CreateDeco("vase bleu foncé", objPnjs.getPnjById(7),"5 blocs d'émeraude","","oui",["bleu", "vase"]));
         decos.push(this.CreateDeco("vase jaune 2", objPnjs.getPnjById(7),"5 blocs d'émeraude","","oui",["jaune", "vase"]));
@@ -88,6 +95,7 @@ class Decos extends Deco{
         decos.push(this.CreateDeco("vase blanc jaune", objPnjs.getPnjById(7),"5 blocs d'émeraude","","oui",["blanc", "vase"]));
         decos.push(this.CreateDeco("vase rouge", objPnjs.getPnjById(7),"5 blocs d'émeraude","","oui",["rouge", "vase"]));
         decos.push(this.CreateDeco("vase gris", objPnjs.getPnjById(7),"5 blocs d'émeraude","","oui",["gris", "vase"]));
+
         decos.push(this.CreateDeco("Cheminée en brique", objPnjs.getPnjById(8),"5 blocs d'émeraude","","oui",["tete", "deco","maison"]));
         decos.push(this.CreateDeco("Cheminée en pierre taillée moussue", objPnjs.getPnjById(8),"5 blocs d'émeraude","","oui",["tete", "deco","maison"]));
         decos.push(this.CreateDeco("Cheminée en pierre moussue", objPnjs.getPnjById(8),"5 blocs d'émeraude","","oui",["tete", "deco","maison"]));
@@ -95,6 +103,7 @@ class Decos extends Deco{
         decos.push(this.CreateDeco("Cheminée pierre", objPnjs.getPnjById(8),"5 blocs d'émeraude","","oui",["tete", "deco","maison"]));
         decos.push(this.CreateDeco("Cheminée en roche", objPnjs.getPnjById(8),"5 blocs d'émeraude","","oui",["tete", "deco","maison"]));
         decos.push(this.CreateDeco("Cheminée pierre taillée", objPnjs.getPnjById(8),"5 blocs d'émeraude","","oui",["tete", "deco","maison"]));
+
         decos.push(this.CreateDeco("Masque homme 1", objPnjs.getPnjById(9),"2 blocs d'émeraude","","oui",["tete", "deco","masque","personnage","homme"]));
         decos.push(this.CreateDeco("Masque homme 2", objPnjs.getPnjById(9),"2 blocs d'émeraude","","oui",["tete", "deco","masque","personnage","homme"]));
         decos.push(this.CreateDeco("Masque homme 3", objPnjs.getPnjById(9),"2 blocs d'émeraude","","oui",["tete", "deco","masque","personnage","homme"]));
@@ -103,12 +112,14 @@ class Decos extends Deco{
         decos.push(this.CreateDeco("Masque femme 2", objPnjs.getPnjById(9),"2 blocs d'émeraude","","oui",["tete", "deco","masque","personnage","femme"]));
         decos.push(this.CreateDeco("Masque femme 3", objPnjs.getPnjById(9),"2 blocs d'émeraude","","oui",["tete", "deco","masque","personnage","femme"]));
         decos.push(this.CreateDeco("Masque femme 4", objPnjs.getPnjById(9),"2 blocs d'émeraude","","oui",["tete", "deco","masque","personnage","femme"]));
+
         decos.push(this.CreateDeco("Feuilles 1", objPnjs.getPnjById(10),"5 blocs d'émeraude","","oui",["tete", "deco","arbre","plante"]));
         decos.push(this.CreateDeco("Feuilles 2", objPnjs.getPnjById(10),"5 blocs d'émeraude","","oui",["tete", "deco","arbre","plante"]));
         decos.push(this.CreateDeco("Feuilles 3", objPnjs.getPnjById(10),"5 blocs d'émeraude","","oui",["tete", "deco","arbre","plante"]));
         decos.push(this.CreateDeco("Tronc et Feuilles 1", objPnjs.getPnjById(10),"5 blocs d'émeraude","","oui",["tete", "deco","arbre","plante", "bois"]));
         decos.push(this.CreateDeco("Tronc et Feuilles 2", objPnjs.getPnjById(10),"5 blocs d'émeraude","","oui",["tete", "deco","arbre","plante", "bois"]));
         decos.push(this.CreateDeco("Tronc et Feuilles 3", objPnjs.getPnjById(10),"5 blocs d'émeraude","","oui",["tete", "deco","arbre","plante", "bois"]));
+
         decos.push(this.CreateDeco("Lampion rouge simple", objPnjs.getPnjById(11),"64 teintures rouges / 1 Almericoins bronze ","","oui",["lampion","lumiere"]));
         decos.push(this.CreateDeco("Lampion rouge à frange", objPnjs.getPnjById(11),"Lampion rouge simple / 16 pepites d'or","","oui",["lampion","lumiere"]));
         decos.push(this.CreateDeco("Lampion rouge colonne", objPnjs.getPnjById(11),"3 Lampion rouge simple / 32 papier","","oui",["lampion","lumiere"]));
@@ -149,6 +160,7 @@ class Decos extends Deco{
         decos.push(this.CreateDeco("Lampion jaune colonne", objPnjs.getPnjById(11),"3 Lampion jaune simple / 32 papier","","oui",["lampion","lumiere"]));
         decos.push(this.CreateDeco("Mini-Lampion jaune double droit", objPnjs.getPnjById(11),"1 Lampion jaune simple / 1 baton","","oui",["lampion","lumiere"]));
         decos.push(this.CreateDeco("Mini-Lampion jaune double de coin", objPnjs.getPnjById(11),"1 Lampion jaune simple / 1 baton","","oui",["lampion","lumiere"]));
+
         decos.push(this.CreateDeco("Chapeau crabe", objPnjs.getPnjById(12),"casque en cuir / 32 chair de crabes","","oui",["tete","crabe"]));
 
         /**
@@ -171,6 +183,7 @@ class Decos extends Deco{
         decos.push(this.CreateDeco("Chope de vin", objPnjs.getPnjById(13),"2 bloc d'or brut / 64 baies sucrées","","oui",["vin","chope", "alcool","taverne"]));
         decos.push(this.CreateDeco("Bouteille1", objPnjs.getPnjById(13),"32 verres vert / Ac de bronze","","oui",["alcool","taverne"]));
         decos.push(this.CreateDeco("Bouteille2", objPnjs.getPnjById(13),"32 verres violet / Ac de bronze","","oui",["alcool","taverne"]));
+
         decos.push(this.CreateDeco("Barrique", objPnjs.getPnjById(14),"16 planches de chene noir / Ac d'or","","oui",["alcool","tonneau","taverne"]));
         decos.push(this.CreateDeco("3 Barriques", objPnjs.getPnjById(14),"3 Barrique / Ac d'argent","","oui",["alcool","tonneau","taverne"]));
         decos.push(this.CreateDeco("Grosse barique", objPnjs.getPnjById(14),"64 planches de chene noir / 3 Ac d'or","","oui",["alcool","tonneau","taverne"]));
@@ -192,14 +205,17 @@ class Decos extends Deco{
         decos.push(this.CreateDeco("Raisins noir", objPnjs.getPnjById(15),"5 bloc d'émeraude","","oui",["tete", "deco","fruit","vin"]));
         decos.push(this.CreateDeco("Raisins noir 2", objPnjs.getPnjById(15),"5 bloc d'émeraude","","oui",["tete", "deco","fruit","vin"]));
         decos.push(this.CreateDeco("Raisins blanc", objPnjs.getPnjById(15),"5 bloc d'émeraude","","oui",["tete", "deco","fruit","vin"]));
+
         decos.push(this.CreateDeco("Cidre de la compté", objPnjs.getPnjById(16),"32 verre vert / raisins blanc","","oui",["alcool","vin"]));
         decos.push(this.CreateDeco("Cuvée ecu de chene", objPnjs.getPnjById(16),"32 verre vert / raisins rosé","","oui",["alcool","vin"]));
         decos.push(this.CreateDeco("Rouge Uroc K ay", objPnjs.getPnjById(16),"32 verre vert / raisins violet","","oui",["alcool","vin"]));
+
         decos.push(this.CreateDeco("Champignon rouge", objPnjs.getPnjById(17),"5 bloc d'émeraude","","oui",["tete", "deco","plante"]));
         decos.push(this.CreateDeco("Champignon Marron", objPnjs.getPnjById(17),"5 bloc d'émeraude","","oui",["tete", "deco","plante"]));
         decos.push(this.CreateDeco("Champignon bleu", objPnjs.getPnjById(17),"5 bloc d'émeraude","","oui",["tete", "deco","plante"]));
         decos.push(this.CreateDeco("Champignon bleu nuit", objPnjs.getPnjById(17),"5 bloc d'émeraude","","oui",["tete", "deco","plante"]));
         decos.push(this.CreateDeco("Champignon violet", objPnjs.getPnjById(17),"5 bloc d'émeraude","","oui",["tete", "deco","plante"]));
+
         decos.push(this.CreateDeco("Grenadille", objPnjs.getPnjById(18),"5 bloc d'émeraude","","oui",["tete", "deco","fruit"]));
         decos.push(this.CreateDeco("Kiwi", objPnjs.getPnjById(18),"5 bloc d'émeraude","","oui",["tete", "deco","fruit"]));
         decos.push(this.CreateDeco("Orange rouge", objPnjs.getPnjById(18),"5 bloc d'émeraude","","oui",["tete", "deco","fruit"]));
@@ -219,6 +235,7 @@ class Decos extends Deco{
          **/
         decos.push(this.CreateDeco("Sjokk fisk suspendus", objPnjs.getPnjById(19),"3 Sjokk","","oui",["poisson"]));
         decos.push(this.CreateDeco("Tonneau de Sjokk fisk", objPnjs.getPnjById(19),"1 tonneau vide + 4 Sjokk","","oui",["poisson"]));
+
         decos.push(this.CreateDeco("Bûche de chene", objPnjs.getPnjById(20),"5 bloc d'émeraude","","oui",["tete", "deco","bois"]));
         decos.push(this.CreateDeco("Bûche acajou", objPnjs.getPnjById(20),"5 bloc d'émeraude","","oui",["tete", "deco","bois"]));
         decos.push(this.CreateDeco("Bûche sapin", objPnjs.getPnjById(20),"5 bloc d'émeraude","","oui",["tete", "deco","bois"]));
@@ -325,6 +342,15 @@ class Decos extends Deco{
         decos.push(this.CreateDeco("Cagette de tortue", objPnjs.getPnjById(37),"3 Tortue de Kemp de Nakaram / cagette vide","","oui",["chapeau","tete","tortue","nourriture"]));
 
         decos.push(this.CreateDeco("Plan de construction", objPnjs.getPnjById(38),"5 bloc d'émeraude","","oui",["maison","plan","construction"]));
+
+        /**
+         * Helios
+         */
+        decos.push(this.CreateDecoV2("Gemme violette", objPnjs.getPnjById(39),"4 blocs d'émeraude + 1 bloc de diamant","","oui",["violet","tete","bijoux"]));
+        decos.push(this.CreateDecoV2("Gros diamant", objPnjs.getPnjById(39),"5 blocs d'émeraude","","oui",["bijoux","tete","bijoux"]));
+        decos.push(this.CreateDecoV2("Géode blanche", objPnjs.getPnjById(39),"5 blocs d'émeraude","","oui",["bijoux","tete","blanc"]));
+        decos.push(this.CreateDecoV2("Géode rose", objPnjs.getPnjById(39),"4 blocs d'émeraude + 2 blocs d'améthyste","","oui",["bijoux","tete","rose"]));
+        decos.push(this.CreateDecoV2("Pot de perles", objPnjs.getPnjById(39),"5 blocs d'émeraude","","oui",["pot","tete","bijoux"]));
 
         /**
          * données decos
