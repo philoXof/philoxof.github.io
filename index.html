@@ -93,7 +93,6 @@
 
 
 
-
 </script>
 
 
@@ -138,7 +137,6 @@
     let recherche = params.get("recherche");
     document.getElementById("recherche").value = recherche;
     const result = recherche === undefined || recherche === null || recherche === "" ? decos :  search.searchDeco(recherche);
-
     const createDecoRender = (deco) =>{
         const image = deco._image;
         const pnj = deco._pnj_id._name;

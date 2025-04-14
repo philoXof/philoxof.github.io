@@ -69,7 +69,7 @@ class Pnjs extends Pnj{
         /**
          * Rome
          **/
-        //pnjs.push(new Pnj(26,"Quartus","x=-18187,y=68,z=-3392",villes.getVilleByName(Rome)))
+        pnjs.push(new Pnj(24,"Quartus","x=-18187,y=68,z=-3392",villes.getVilleByName(Rome)))
         pnjs.push(new Pnj(26,"Junius","x=-18253,y=69,z=-3330",villes.getVilleByName(Rome)))
         pnjs.push(new Pnj(27,"Faberien","x=-18248,y=68,z=-3371",villes.getVilleByName(Rome)))
         pnjs.push(new Pnj(28,"Decimus","x=-18679,y=79,z=-3221",villes.getVilleByName(Rome)))

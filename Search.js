@@ -30,7 +30,6 @@ class Search{
     searchDeco = (recherche) =>{
         let result = [];
         const splitSearch = recherche.split(" ");
-
         splitSearch.forEach(word=>{
 
 
@@ -39,7 +38,7 @@ class Search{
                 const splitDecoName = deco._name.split(" ");
                 // pour les decos en deux mots, ca prends chaque mot tout seul
                 splitDecoName.forEach(name => {
-                    if(this.calculate(word,splitDecoName)){
+                    if(this.calculate(word,name)){
                         if(!result.includes(deco))
                             result.push(deco);
                     }
