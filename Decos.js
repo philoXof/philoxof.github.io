@@ -360,6 +360,18 @@ class Decos extends Deco{
         decos.push(this.CreateDecoV2("Pépite d or", objPnjs.getPnjById(40),"4 blocs d'émeraude + 2 bloc d'or","","oui",["pot","tete","bijoux"]));
         decos.push(this.CreateDecoV2("Sac d or", objPnjs.getPnjById(40),"4 blocs d'émeraude + 2 bloc d'or","","oui",["pot","tete","bijoux"]));
 
+        decos.push(this.CreateDecoV2("Masque Femme Helios 4", objPnjs.getPnjById(41),"2 blocs d'émeraude","","oui",["tete","pnj","masque"]));
+        decos.push(this.CreateDecoV2("Masque Femme Helios 5", objPnjs.getPnjById(41),"2 blocs d'émeraude","","oui",["tete","pnj","masque"]));
+        decos.push(this.CreateDecoV2("Masque Femme Helios 6", objPnjs.getPnjById(41),"2 blocs d'émeraude","","oui",["tete","pnj","masque"]));
+        decos.push(this.CreateDecoV2("Masque Femme Helios 7", objPnjs.getPnjById(41),"2 blocs d'émeraude","","oui",["tete","pnj","masque"]));
+        decos.push(this.CreateDecoV2("Masque Femme Helios 8", objPnjs.getPnjById(41),"2 blocs d'émeraude","","oui",["tete","pnj","masque"]));
+        decos.push(this.CreateDecoV2("Masque Homme Helios 4", objPnjs.getPnjById(41),"2 blocs d'émeraude","","oui",["tete","pnj","masque"]));
+        decos.push(this.CreateDecoV2("Masque Homme Helios 5", objPnjs.getPnjById(41),"2 blocs d'émeraude","","oui",["tete","pnj","masque"]));
+        decos.push(this.CreateDecoV2("Masque Homme Helios 6", objPnjs.getPnjById(41),"2 blocs d'émeraude","","oui",["tete","pnj","masque"]));
+        decos.push(this.CreateDecoV2("Masque Homme Helios 7", objPnjs.getPnjById(41),"2 blocs d'émeraude","","oui",["tete","pnj","masque"]));
+        decos.push(this.CreateDecoV2("Masque Homme Helios 8", objPnjs.getPnjById(41),"2 blocs d'émeraude","","oui",["tete","pnj","masque"]));
+
+
         /**
          * données decos
          */
