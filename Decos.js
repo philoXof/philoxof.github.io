@@ -352,6 +352,14 @@ class Decos extends Deco{
         decos.push(this.CreateDecoV2("Géode rose", objPnjs.getPnjById(39),"4 blocs d'émeraude + 2 blocs d'améthyste","","oui",["bijoux","tete","rose"]));
         decos.push(this.CreateDecoV2("Pot de perles", objPnjs.getPnjById(39),"5 blocs d'émeraude","","oui",["pot","tete","bijoux"]));
 
+        decos.push(this.CreateDecoV2("Bracelet d or", objPnjs.getPnjById(40),"4 blocs d'émeraude + 2 bloc d'or","","oui",["pot","tete","bijoux"]));
+        decos.push(this.CreateDecoV2("Calice d or", objPnjs.getPnjById(40),"4 blocs d'émeraude + 2 bloc d'or","","oui",["pot","tete","bijoux"]));
+        decos.push(this.CreateDecoV2("Collier en or", objPnjs.getPnjById(40),"4 blocs d'émeraude + 2 bloc d'or","","oui",["pot","tete","bijoux"]));
+        decos.push(this.CreateDecoV2("Collier en or 0", objPnjs.getPnjById(40),"4 blocs d'émeraude + 2 bloc d'or","","oui",["pot","tete","bijoux"]));
+        decos.push(this.CreateDecoV2("Collier en or 1", objPnjs.getPnjById(40),"4 blocs d'émeraude + 2 bloc d'or","","oui",["pot","tete","bijoux"]));
+        decos.push(this.CreateDecoV2("Pépite d or", objPnjs.getPnjById(40),"4 blocs d'émeraude + 2 bloc d'or","","oui",["pot","tete","bijoux"]));
+        decos.push(this.CreateDecoV2("Sac d or", objPnjs.getPnjById(40),"4 blocs d'émeraude + 2 bloc d'or","","oui",["pot","tete","bijoux"]));
+
         /**
          * données decos
          */

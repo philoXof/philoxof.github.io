@@ -100,6 +100,7 @@ class Pnjs extends Pnj{
          * Helios
          */
         pnjs.push(new Pnj(39,"Areina","x:15887, y:99, z:7262",villes.getVilleByName(Helios)))
+        pnjs.push(new Pnj(40,"Belsane","x:15887, y:99, z:7254",villes.getVilleByName(Helios)))
 
         /**
          * Pas2Ville
